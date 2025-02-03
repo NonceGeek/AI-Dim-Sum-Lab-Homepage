@@ -78,7 +78,7 @@ function Header() {
                   href="https://github.com/NonceGeek/awesome-yue-lab/"
                   className="ml-6 block text-slate-400 hover:text-slate-500 dark:hover:text-slate-300"
                 >
-                  <span className="sr-only">Yue Lab on GitHub</span>
+                  <span className="sr-only">Lab on GitHub</span>
                   <svg
                     viewBox="0 0 16 16"
                     className="w-5 h-5"
@@ -124,14 +124,19 @@ function Header() {
           <div className="flex items-start justify-between">
             <div>
             <img src={urania.src} alt="Yue" className="w-80 object-contain" />
-            <h1 className="text-slate-900 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-white">
-                Yue Lab
-            </h1>
+            <h3 className="text-slate-900 font-extrabold text-3xl sm:text-3xl lg:text-5xl tracking-tight text-white">
+            <br></br>
+            <br></br>
+            <br></br>
+              {/* Key Lab of 
+              <br></br>
+              Cantonese Corpus Construction and LLMs Evaluation */}
+            </h3>
             <br></br>
             <br></br>
             <br></br>
               <p className="mt-6 text-lg text-slate-600 max-w-3xl dark:text-slate-400 text-left dark:text-white">
-                <b> —— 建设AI友好型粤语语料库，链接全球粤语AI生态</b>
+                <b> 建设AI友好型粤语语料库，链接全球粤语AI生态</b>
               </p>
             </div>
           </div>
@@ -157,7 +162,7 @@ export default function Home() {
           content="Desci Cyou - Collaboration Without Borders, Empowering Science Through Decentralization."
         />
         <title>
-          Yue Lab - 粤语语料库建设与大模型评测重点实验室
+          Cantonese Corpus Construction & LLMs Evaluation - 粤语语料库建设与大模型评测重点实验室
         </title>
       </Head>
       <div className="mb-20 overflow-hidden sm:mb-32 md:mb-40">
@@ -175,7 +180,7 @@ export default function Home() {
               在当前 AI 发展日新月异的技术背景下，构建粤语语料库及其上的人工智能应用生态，让粤语成为「AI 友好型」方言，是文化传承的挑战与机遇，也是构建粤语人工智能应用创新的基础。
             </p>
 
-            <p className="dark:text-white">在这一背景下，<span className="text-red-500">Yue Lab</span> 致力于探索一系列关键命题：</p>
+            <p className="dark:text-white">在这一背景下，<span className="text-red-500">重点实验室</span> 致力于探索一系列关键命题：</p>
 
             <ul className="dark:text-white">
               <li>如何构建标注规范，以高效建设大规模自治多模态粤语语料库（Autonomous Multimodal Cantonese Corpus）？</li>
@@ -227,7 +232,7 @@ export default function Home() {
       <div className="border-t border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 md:px-8">
           <p className="text-sm text-center text-slate-500 dark:text-slate-400">
-            © {new Date().getFullYear()} Yue Lab. All rights reserved. 粤语语料库建设与大模型评测重点实验室版权所有
+            © {new Date().getFullYear()} Key Lab of Cantonese Corpus Construction and LLMs Evaluation. All rights reserved. 粤语语料库建设与大模型评测重点实验室版权所有
           </p>
         </div>
       </div>

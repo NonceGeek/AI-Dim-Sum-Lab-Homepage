@@ -118,6 +118,11 @@ export function NavItems() {
   return (
     <>
       <li>
+        <Link href="/corpus" className="hover:text-sky-500 dark:hover:text-sky-400">
+          语料库
+        </Link>
+      </li>
+      <li>
         <Link href="/papers" className="hover:text-sky-500 dark:hover:text-sky-400">
           论文
         </Link>
