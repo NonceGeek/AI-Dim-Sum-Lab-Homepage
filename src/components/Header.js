@@ -123,18 +123,18 @@ export function NavItems() {
         </Link>
       </li>
       <li>
-        <Link href="/papers" className="hover:text-sky-500 dark:hover:text-sky-400">
-          论文
-        </Link>
-      </li>
-      <li>
         <Link href="/topics" className="hover:text-sky-500 dark:hover:text-sky-400">
           课题
         </Link>
       </li>
       <li>
-        <Link href="/examples" className="hover:text-sky-500 dark:hover:text-sky-400">
-          案例
+        <Link href="/papers" className="hover:text-sky-500 dark:hover:text-sky-400">
+          论文
+        </Link>
+      </li>
+      <li>
+        <Link href="https://github.com/NonceGeek/awesome-yue-lab/" className="hover:text-sky-500 dark:hover:text-sky-400">
+          应用
         </Link>
       </li>
     </>

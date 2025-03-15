@@ -162,7 +162,7 @@ export default function Home() {
           content="Desci Cyou - Collaboration Without Borders, Empowering Science Through Decentralization."
         />
         <title>
-          Cantonese Corpus Construction & LLMs Evaluation - 粤语语料库建设与大模型评测重点实验室
+          Cantonese Corpus Construction & AI Agents - Dim Sum AI Lab
         </title>
       </Head>
       <div className="mb-20 overflow-hidden sm:mb-32 md:mb-40">
@@ -170,7 +170,7 @@ export default function Home() {
 
         <section className="text-center px-8 mt-20">
           <h2 className="text-slate-900 text-4xl tracking-tight font-extrabold sm:text-5xl dark:text-white">
-            粤语语料库建设与大模型评测重点实验室
+            Dim Sum AI Lab
           </h2>
           <br></br>
           {/* TODO: to render the content in markdown use remark or something like that */}
@@ -180,7 +180,7 @@ export default function Home() {
               在当前 AI 发展日新月异的技术背景下，构建粤语语料库及其上的人工智能应用生态，让粤语成为「AI 友好型」方言，是文化传承的挑战与机遇，也是构建粤语人工智能应用创新的基础。
             </p>
 
-            <p className="dark:text-white">在这一背景下，<span className="text-red-500">重点实验室</span> 致力于探索一系列关键命题：</p>
+            <p className="dark:text-white">在这一背景下，<span className="text-red-500">Dim Sum AI Lab</span> 致力于探索一系列关键命题：</p>
 
             <ul className="dark:text-white">
               <li>如何构建标注规范，以高效建设大规模自治多模态粤语语料库（Autonomous Multimodal Cantonese Corpus）？</li>
@@ -232,7 +232,7 @@ export default function Home() {
       <div className="border-t border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 md:px-8">
           <p className="text-sm text-center text-slate-500 dark:text-slate-400">
-            © {new Date().getFullYear()} Key Lab of Cantonese Corpus Construction and LLMs Evaluation. All rights reserved. 粤语语料库建设与大模型评测重点实验室版权所有
+            © {new Date().getFullYear()} Key Lab of Cantonese Corpus Construction and AI Agents. All rights reserved. DimSum AI Lab 版权所有
           </p>
         </div>
       </div>

@@ -64,61 +64,9 @@ export default function Topics() {
           Topics
         </h1>
         <p className="text-lg text-slate-700 dark:text-slate-400">
-          🧪✨ Match the Grantor and the Topics, supporting c00l Topics for the next DECADE.
+          🧪✨ Amazing Topics.
         </p>
       </header>
-
-      <div className="flex justify-center gap-4 mb-8">
-        <a
-          href="https://t.me/leeduckgo"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-        >
-          Submit a Topic
-        </a>
-        <a
-          href="https://t.me/leeduckgo"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
-        >
-          Become a Grantor
-        </a>
-      </div>
-
-      <div className="overflow-x-auto">
-        <table className="min-w-full table-auto border-collapse">
-          <thead>
-            <tr className="bg-slate-100 dark:bg-slate-800">
-              <th className="border p-3 text-left">Title</th>
-              <th className="border p-3 text-left">Description</th>
-              <th className="border p-3 text-left">Proposer</th>
-              <th className="border p-3 text-left">Grantor</th>
-              <th className="border p-3 text-left">Amount</th>
-              <th className="border p-3 text-left">Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            {initialTopics.map((topic, index) => (
-              <tr key={index} className="border-b hover:bg-slate-50 dark:hover:bg-slate-700">
-                <td className="border p-3">{topic.title}</td>
-                <td className="border p-3">{topic.description}</td>
-                <td className="border p-3">
-                  <a href={topic.proposerLink} className="text-blue-500 hover:underline">
-                    {topic.proposer}
-                  </a>
-                </td>
-                <td className="border p-3">{topic.grantor}</td>
-                <td className="border p-3">{topic.grantAmount}</td>
-                <td className="border p-3">
-                  {topic.date.toLocaleDateString(undefined, dateFormat)}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
       
     </main>
   )
@@ -126,7 +74,7 @@ export default function Topics() {
 
 Topics.layoutProps = {
   meta: {
-    title: 'AI Research Papers',
-    description: 'Latest AI research papers from arXiv.',
+    title: 'Lab Topics',
+    description: '🧪✨ Amazing Topics.',
   },
 }
