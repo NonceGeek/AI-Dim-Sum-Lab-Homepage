@@ -232,7 +232,7 @@ export default function Home() {
       <div className="border-t border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 md:px-8">
           <p className="text-sm text-center text-slate-500 dark:text-slate-400">
-            © {new Date().getFullYear()} Key Lab of Cantonese Corpus Construction and AI Agents. All rights reserved. DimSum AI Lab 版权所有
+            © {new Date().getFullYear()} Key Lab of Cantonese Corpus Construction and AI Agents. All rights reserved. DimSum AI Lab 版权所有 | 苏ICP备2025170597号
           </p>
         </div>
       </div>

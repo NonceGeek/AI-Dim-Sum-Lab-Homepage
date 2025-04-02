@@ -8,13 +8,16 @@ const footerNav = [
       // { title: 'Discord', href: '/discord' },
       // { title: 'YouTube', href: 'https://www.youtube.com/tailwindlabs' },
     ],
-    Partners: [
-      { title: 'TODO', href: 'TODO' },
+    Media: [
+      { title: '官方视频号', href: 'TODO - gen a qr code.' }, 
       // { title: 'University of Alberta', href: 'https://www.ualberta.ca/en/index.html' },
       // {
       //   title: 'NCU AI Research Institute',
       //   href: 'http://ie.ncu.edu.cn/kxyj/kypt/43fd339753aa4f6e9b2755589419ac9b.htm',
       // },
+    ],
+    Partners: [
+      { title: 'TODO', href: 'TODO' },
     ],
     // CooperatingInstitutions: [
     //   { title: 'DIN', href: 'https://twitter.com/din_lol_' },
