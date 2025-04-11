@@ -22,7 +22,7 @@ import clsx from 'clsx'
 import { ThemeToggle } from '@/components/ThemeToggle'
 import socialCardLarge from '@/img/social-card-large.jpg'
 
-import urania from '@/img/Ai-Dimsum.jpg'
+import urania from '@/img/Ai-Dimsum.png'
 import StarryBackground from '@/components/starry-background'
 
 function Header() {
