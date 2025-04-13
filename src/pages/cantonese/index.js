@@ -17,12 +17,12 @@ import { Footer } from '@/components/home/Footer'
 import NextLink from 'next/link'
 import Head from 'next/head'
 import { NavItems, NavPopover } from '@/components/Header'
-import styles from './index.module.css'
+import styles from '@/pages/index.module.css'
 import clsx from 'clsx'
 import { ThemeToggle } from '@/components/ThemeToggle'
 import socialCardLarge from '@/img/social-card-large.jpg'
 
-import urania from '@/img/Ai-Dimsum.png'
+import urania from '@/img/urania.png'
 import StarryBackground from '@/components/starry-background'
 
 function Header() {
@@ -93,7 +93,7 @@ function Header() {
                   <select
                     onChange={(e) => (window.location.href = e.target.value)}
                     className="appearance-none bg-transparent border-none text-slate-400 hover:text-slate-500 dark:hover:text-slate-300 cursor-pointer pr-6"
-                    defaultValue=""
+                    defaultValue="/cantonese"
                   >
                     <option value="/">&nbsp;&nbsp;&nbsp;&nbsp;中文</option>
                     <option value="/en">English</option>
@@ -136,7 +136,7 @@ function Header() {
             <br></br>
             <br></br>
               <p className="mt-6 text-lg text-slate-600 max-w-3xl dark:text-slate-400 text-left dark:text-white">
-                <b> 建设AI友好型粤语语料库，链接全球粤语AI生态</b>
+                <b> 建設AI友好型粵語語料庫，連接全球粵語AI生態</b>
               </p>
             </div>
           </div>
@@ -176,22 +176,22 @@ export default function Home() {
           {/* TODO: to render the content in markdown use remark or something like that */}
           <div className="mt-8 text-left max-w-3xl mx-auto prose prose-slate dark:prose-invert">
             <p className="dark:text-white">
-              作为最具活力和辨识度的汉语方言，粤语不仅是一种交流工具，更是岭南文化的精神载体和活态文化遗产，被全球约 8500 万人+ 所使用。
-              在当前 AI 发展日新月异的技术背景下，构建粤语语料库及其上的人工智能应用生态，让粤语成为「AI 友好型」方言，是文化传承的挑战与机遇，也是构建粤语人工智能应用创新的基础。
+              作為最具活力和辨識度嘅漢語方言，粵語唔單止係一種交流工具，更係嶺南文化嘅精神載體同活態文化遺產，被全球約 8500 萬人+ 所使用。
+              喺當前 AI 發展日新月異嘅技術背景下，構建粵語語料庫及其上嘅人工智能應用生態，令粵語成為「AI 友好型」方言，係文化傳承嘅挑戰與機遇，都係構建粵語人工智能應用創新嘅基礎。
             </p>
 
-            <p className="dark:text-white">在这一背景下，<span className="text-red-500">Dim Sum AI Lab</span> 致力于探索一系列关键命题：</p>
+            <p className="dark:text-white">喺呢一背景下，<span className="text-red-500">Dim Sum AI Lab</span> 致力於探索一系列關鍵命題：</p>
 
             <ul className="dark:text-white">
-              <li>如何构建标注规范，以高效建设大规模自治多模态粤语语料库（Autonomous Multimodal Cantonese Corpus）？</li>
-              <li>如何设计接入机制，以在粤语语料库的基础上构建 Yue App Store 与粤语多用途应用生态？</li>
-              <li>如何改进搜索算法，以在粤语语料库的基础上开发新一代人工智能友好的搜索引擎？</li>
-              <li>如何创新服务模式，以在粤语语料库的基础上打造新一代 AI SaaS 框架？</li>
-              <li>如何培育开源社区，以围绕粤语语料库创建新一代全球化的建设者与研究者社区（DAO for Buidlers & Researchers）？</li>
+              <li>點樣構建標註規範，以高效建設大規模自治多模態粵語語料庫（Autonomous Multimodal Cantonese Corpus）？</li>
+              <li>點樣設計接入機制，以喺粵語語料庫嘅基礎上構建 Yue App Store 與粵語多用途應用生態？</li>
+              <li>點樣改進搜索算法，以喺粵語語料庫嘅基礎上開發新一代人工智能友好嘅搜索引擎？</li>
+              <li>點樣創新服務模式，以喺粵語語料庫嘅基礎上打造新一代 AI SaaS 框架？</li>
+              <li>點樣培育開源社區，以圍繞粵語語料庫創建新一代全球化嘅建設者與研究者社區（DAO for Buidlers & Researchers）？</li>
             </ul>
 
             <pre >
-              {`+--------------- Yue 应用商店 powered by AI ------------------+
+              {`+--------------- Yue 應用商店 powered by AI ------------------+
    🤖 Yue AI Agents    |   📱 Yue Apps   |    🛠️  Yue Tools 
 +------------------------------------------------------------+
         ↑                       ↑                       ↑
@@ -200,13 +200,13 @@ export default function Home() {
 +------------------------------------------------------------+
         ↑                       ↑                       ↑
 +------------------------+ +----------------+ +--------------+ +--------+
-| 🚗 人工智能友好的搜索引擎 | | 🤖 AI SaaS 框架 | |  🔌 扩展插件    | |  LLMs  |
+| 🚗 人工智能友好嘅搜索引擎 | | 🤖 AI SaaS 框架 | |  🔌 擴展插件    | |  LLMs  |
 +------------------------+ +----------------+ +--------------+ +--------+
                                    ↑               ↑     接入       |
                                    +---------------+---------------+
         ↑                       ↑                       ↑
 +-----------------------------+ +----------------------------+
-|  多模态数据库（文本/音频/视频）  | |  🔖 标注系统（AI+人工+区块链） |
+|  多模態數據庫（文本/音頻/視頻）  | |  🔖 標註系統（AI+人工+區塊鏈） |
 +-----------------------------+ +----------------------------+`}
             </pre>
           </div>
@@ -232,7 +232,7 @@ export default function Home() {
       <div className="border-t border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 md:px-8">
           <p className="text-sm text-center text-slate-500 dark:text-slate-400">
-            © {new Date().getFullYear()} Key Lab of Cantonese Corpus Construction and AI Agents. All rights reserved. DimSum AI Lab 版权所有 | 苏ICP备2025170597号
+            © {new Date().getFullYear()} Key Lab of Cantonese Corpus Construction and AI Agents. All rights reserved. DimSum AI Lab 版權所有 | 蘇ICP備2025170597號
           </p>
         </div>
       </div>

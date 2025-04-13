@@ -115,10 +115,12 @@ export function NavPopover({ display = 'md:hidden', className, ...props }) {
 }
 
 export function NavItems() {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  
   return (
     <>
       <li>
-        <Link href="/corpus" className="hover:text-sky-500 dark:hover:text-sky-400">
+        <Link href="https://search.aidimsum.com" target="_blank" className="hover:text-sky-500 dark:hover:text-sky-400">
           语料库
         </Link>
       </li>
@@ -132,10 +134,70 @@ export function NavItems() {
           论文
         </Link>
       </li>
-      <li>
-        <Link href="https://github.com/NonceGeek/awesome-yue-lab/" className="hover:text-sky-500 dark:hover:text-sky-400">
+      <li className="relative">
+        <button 
+          className="flex items-center hover:text-sky-500 dark:hover:text-sky-400"
+          onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+        >
           应用
-        </Link>
+          <svg 
+            width="12" 
+            height="12" 
+            viewBox="0 0 12 12" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg"
+            className={`ml-1 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}
+          >
+            <path d="M2 4L6 8L10 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+        {isDropdownOpen && (
+          <div className="absolute top-full left-0 mt-1 py-2 w-48 bg-white dark:bg-slate-800 rounded-lg shadow-lg z-50">
+
+            <a 
+              href="https://search.aidimsum.com" 
+              target="_blank"
+              className="block px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-700"
+            >
+              搜索引擎
+            </a>
+            <a 
+              href="https://saas.aidimsum.com" 
+              target="_blank"
+              className="block px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-700"
+            >
+              AI SaaS
+            </a>
+            <a 
+              href="https://prompts.aidimsum.com" 
+              target="_blank"
+              className="block px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-700"
+            >
+              Prompt Manager
+            </a>
+            <a 
+              href="https://lang.rootmud.xyz" 
+              target="_blank"
+              className="block px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-700"
+            >
+              粤语学习小助手
+            </a>
+            <a 
+              href="https://todo" 
+              target="_blank"
+              className="block px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-700"
+            >
+              Yuer-粤化工具 
+            </a>
+            <a 
+              href="https://github.com/NonceGeek/awesome-yue-lab/" 
+              target="_blank"
+              className="block px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-700"
+            >
+              ✨ Idea Stacks
+            </a>
+          </div>
+        )}
       </li>
     </>
   )
@@ -196,67 +258,6 @@ export function Header({ hasNav = false, navIsOpen, onNavToggle, title, section 
         )}
       >
         <div className="max-w-8xl mx-auto">
-          <div
-            className={clsx(
-              'py-4 border-b border-slate-900/10 lg:px-8 lg:border-0 dark:border-slate-300/10',
-              hasNav ? 'mx-4 lg:mx-0' : 'px-4'
-            )}
-          >
-            <div className="relative flex items-center">
-              <Link
-                href="/"
-                className="mr-3 flex-none w-[2.0625rem] overflow-hidden md:w-auto"
-                onContextMenu={(e) => {
-                  e.preventDefault()
-                  Router.push('/brand')
-                }}
-              >
-                <span className="sr-only">Desci Cyou home page</span>
-                <Logo className="w-auto h-10" />
-              </Link>
-              {/* <VersionSwitcher /> */}
-              {/* <Featured /> */}
-              <div className="relative hidden lg:flex items-center ml-auto">
-                <nav className="text-sm leading-6 font-semibold text-slate-700 dark:text-slate-200">
-                  <ul className="flex space-x-8"></ul>
-                </nav>
-                <div className="flex items-center border-l border-slate-200 ml-6 pl-6 dark:border-slate-800">
-                  <ThemeToggle panelClassName="mt-8" />
-                  <a
-                    href="https://github.com/NonceGeek/awesome-yue-lab/"
-                    className="ml-6 block text-slate-400 hover:text-slate-500 dark:hover:text-slate-300"
-                  >
-                    <span className="sr-only">Desci Cyou on GitHub</span>
-                    <svg
-                      viewBox="0 0 16 16"
-                      className="w-5 h-5"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-              <SearchButton className="ml-auto text-slate-500 w-8 h-8 -my-1 flex items-center justify-center hover:text-slate-600 lg:hidden dark:text-slate-400 dark:hover:text-slate-300">
-                <span className="sr-only">Search</span>
-                <svg
-                  width="24"
-                  height="24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="m19 19-3.5-3.5" />
-                  <circle cx="11" cy="11" r="6" />
-                </svg>
-              </SearchButton>
-              <NavPopover className="ml-2 -my-1" display="lg:hidden" />
-            </div>
-          </div>
           {hasNav && (
             <div className="flex items-center p-4 border-b border-slate-900/10 lg:hidden dark:border-slate-50/[0.06]">
               <button

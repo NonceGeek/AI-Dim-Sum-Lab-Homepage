@@ -38,25 +38,6 @@ export default function Topics() {
   const [papers, setPapers] = useState([])
   const [loading, setLoading] = useState(true)
 
-  
-
-  // useEffect(() => {
-  //   async function fetchPapers() {
-  //     try {
-  //       const response = await fetch('https://api.desci.cyou/api/top_sci_rss/rss?category=cs.AI')
-  //       const data = await response.json()
-  //       if (data.code === 0) {
-  //         setPapers(data.data)
-  //       }
-  //     } catch (error) {
-  //       console.error("Failed to fetch papers:", error)
-  //     } finally {
-  //       setLoading(false)
-  //     }
-  //   }
-  //   fetchPapers()
-  // }, [])
-
   return (
     <main className="max-w-[52rem] mx-auto px-4 pb-28 sm:px-6 md:px-8 xl:px-12 lg:max-w-6xl">
       <header className="py-16 sm:text-center">

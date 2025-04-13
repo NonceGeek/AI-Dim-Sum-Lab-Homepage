@@ -4,7 +4,7 @@ import { Logo } from '@/components/Logo'
 const footerNav = [
   {
     Community: [
-      { title: 'GitHub', href: 'https://github.com/NonceGeek/awesome-yue-lab/' },
+      { title: 'GitHub', href: 'https://github.com/NonceGeek/awesome-ai-dimsum' },
       // { title: 'Discord', href: '/discord' },
       // { title: 'YouTube', href: 'https://www.youtube.com/tailwindlabs' },
     ],
@@ -17,7 +17,7 @@ const footerNav = [
       // },
     ],
     Partners: [
-      { title: 'TODO', href: 'TODO' },
+      { title: 'NonceGeekDAO', href: 'https://github.com/NonceGeek' },
     ],
     // CooperatingInstitutions: [
     //   { title: 'DIN', href: 'https://twitter.com/din_lol_' },
