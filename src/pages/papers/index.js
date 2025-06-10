@@ -35,7 +35,7 @@ export default function Papers() {
           Latest Papers of Lab
         </h1>
         <p className="text-lg text-slate-700 dark:text-slate-400">
-          let's buidl the really cool stuff.
+          let's build the really cool stuff.
         </p>
       </header>
 
