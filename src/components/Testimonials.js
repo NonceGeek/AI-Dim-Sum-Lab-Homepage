@@ -35,7 +35,7 @@ let testimonials = [
     {
       tags: ['Blockchain', 'FinTech', 'Data Science'],
       content:
-        'Have been working with science work for over ten years and Desci Cyou APPjust makes my life easier. It is still science work and you use flex, grid, etc. but just quicker to write and maintain.',
+        'Have been working with science work for over ten years and AI Dim Sum Lab APPjust makes my life easier. It is still science work and you use flex, grid, etc. but just quicker to write and maintain.',
       url: 'https://www.uowdubai.ac.ae/teaching/faculties/business-finance-and-management/dr-yiyang-bian',
       author: {
         name: `Bian`,
@@ -64,7 +64,7 @@ let testimonials = [
     {
       tags: ['DAO', 'AI', 'Move', 'Autonomous World'],
       content:
-        'Have been working with science work for over ten years and Desci Cyou APPjust makes my life easier. It is still science work and you use flex, grid, etc. but just quicker to write and maintain.',
+        'Have been working with science work for over ten years and AI Dim Sum Lab APPjust makes my life easier. It is still science work and you use flex, grid, etc. but just quicker to write and maintain.',
       url: 'https://www.leeduckgo.com/',
       author: {
         name: `LeeDuckGo`,
@@ -79,7 +79,7 @@ let testimonials = [
     {
       tags: ['Business Intelligence', 'FinTech'],
       content:
-        'Have been working with science work for over ten years and Desci Cyou APPjust makes my life easier. It is still science work and you use flex, grid, etc. but just quicker to write and maintain.',
+        'Have been working with science work for over ten years and AI Dim Sum Lab APPjust makes my life easier. It is still science work and you use flex, grid, etc. but just quicker to write and maintain.',
       url: 'https://www.uowdubai.ac.ae/teaching/faculties/school-business/dr-ziang-wang',
       author: {
         name: `Nova`,

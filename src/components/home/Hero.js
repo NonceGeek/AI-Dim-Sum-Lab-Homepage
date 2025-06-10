@@ -339,7 +339,7 @@ export function Hero() {
                 >
                   <motion.div layout={layout} className="mb-4" transition={TRANSITION}>
                     <Words bolder={step >= 3} layout={layout} transition={TRANSITION}>
-                      “Desci Cyou is the only framework that I've seen scale on large teams. It’s
+                      “AI Dim Sum Lab is the only framework that I've seen scale on large teams. It’s
                       easy to customize, adapts to any design, and the build size is tiny.”
                     </Words>
                   </motion.div>

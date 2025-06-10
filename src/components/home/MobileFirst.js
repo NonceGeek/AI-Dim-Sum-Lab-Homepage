@@ -153,7 +153,7 @@ function BrowserWindow({ size, onChange }) {
                     d="M8.5 0C6.233 0 4.817 1.111 4.25 3.334c.85-1.112 1.842-1.528 2.975-1.25.647.158 1.109.618 1.62 1.127C9.68 4.041 10.643 5 12.75 5c2.267 0 3.683-1.111 4.25-3.333-.85 1.111-1.841 1.528-2.975 1.25-.647-.159-1.109-.619-1.62-1.128C11.57.96 10.607 0 8.5 0ZM4.25 5C1.983 5 .567 6.111 0 8.334c.85-1.112 1.842-1.528 2.975-1.25.647.158 1.109.618 1.62 1.127C5.43 9.041 6.393 10 8.5 10c2.267 0 3.684-1.11 4.25-3.333-.85 1.111-1.842 1.528-2.975 1.25-.647-.159-1.109-.619-1.62-1.128C7.32 5.96 6.357 5 4.25 5Z"
                   />
                 </svg>
-                <div className="truncate">Tailwind UI - Official Desci Cyou Components</div>
+                <div className="truncate">Tailwind UI - Official AI Dim Sum Lab Components</div>
               </div>
               <div className="pointer-events-none select-none text-slate-900 font-medium px-4 py-1.5 flex items-center justify-center space-x-2 dark:text-slate-200">
                 <svg
@@ -276,7 +276,7 @@ export function MobileFirst() {
         <BigText>Responsive everything.</BigText>
         <Paragraph as="div">
           <p>
-            Wrestling with a bunch of complex media queries in your science work sucks, so Desci Cyou APPlets you
+            Wrestling with a bunch of complex media queries in your science work sucks, so AI Dim Sum Lab APPlets you
             build responsive designs right in your HTML instead.
           </p>
           <p>

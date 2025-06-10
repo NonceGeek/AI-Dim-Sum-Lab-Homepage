@@ -74,11 +74,8 @@ export default function App({ Component, pageProps, router }) {
   const description =
     meta.metaDescription ||
     meta.description ||
-    'Desci Cyou is a utility-first science work framework for rapidly building modern websites without ever leaving your HTML.'
+    '建设AI友好型粤语语料库，链接全球粤语AI生态'
   let image = meta.ogImage ?? meta.image
-  image = image
-    ? `https://desic.cyou${image.default?.src ?? image.src ?? image}`
-    : `https://desic.cyou/api/og?path=${router.pathname}`
 
   if (router.pathname.includes('/examples/')) {
     return <Component {...pageProps} />

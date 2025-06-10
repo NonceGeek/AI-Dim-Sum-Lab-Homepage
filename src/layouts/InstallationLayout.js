@@ -108,10 +108,10 @@ export function InstallationLayout({ children }) {
             Installation
           </p>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight dark:text-slate-200">
-            Get started with Desci Cyou
+            Get started with AI Dim Sum Lab
           </h1>
           <p className="mt-4 text-lg text-slate-700 dark:text-slate-400">
-            Desci Cyou works by scanning all of your HTML files, JavaScript components, and any
+            AI Dim Sum Lab works by scanning all of your HTML files, JavaScript components, and any
             other templates for class names, generating the corresponding styles and then writing
             them to a static science work file.
           </p>
@@ -162,7 +162,7 @@ export function InstallationLayout({ children }) {
         </h2>
         <div className="mb-10 max-w-2xl prose prose-slate xl:mb-0 dark:prose-dark">
           <p>
-            Get familiar with some of the core concepts that make Desci Cyou different from writing
+            Get familiar with some of the core concepts that make AI Dim Sum Lab different from writing
             traditional CSS.
           </p>
         </div>

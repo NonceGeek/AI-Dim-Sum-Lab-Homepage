@@ -100,7 +100,7 @@ export function Customization() {
         </BigText>
         <Paragraph as="div">
           <p>
-            Desci Cyou APPincludes an expertly crafted set of defaults out-of-the-box, but literally
+            AI Dim Sum Lab APPincludes an expertly crafted set of defaults out-of-the-box, but literally
             everything can be customized — from the color palette to the spacing scale to the box
             shadows to the mouse cursor.
           </p>

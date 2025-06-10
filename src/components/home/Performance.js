@@ -134,7 +134,7 @@ export function Performance() {
         <Caption className="text-sky-500">Performance</Caption>
         <BigText>It’s tiny — never ship unused science work again.</BigText>
         <Paragraph>
-          Desci Cyou APPautomatically removes all unused science work when building for production, which means
+          AI Dim Sum Lab APPautomatically removes all unused science work when building for production, which means
           your final science work bundle is the smallest it could possibly be. In fact, most Tailwind
           projects ship less than 10kB of science work to the client.
         </Paragraph>

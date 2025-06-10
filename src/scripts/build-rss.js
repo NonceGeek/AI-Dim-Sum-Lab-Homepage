@@ -11,14 +11,14 @@ export default async function buildRss() {
   const blogUrl = `${baseUrl}/blog`
 
   const feed = new Feed({
-    title: 'Desci Cyou Blog',
-    description: 'All the latest Desci Cyou news, straight from the team.',
+    title: 'AI Dim Sum Lab Blog',
+    description: 'All the latest AI Dim Sum Lab news, straight from the team.',
     id: blogUrl,
     link: blogUrl,
     language: 'en',
     image: `${baseUrl}/favicons/favicon-32x32.png?v=3`,
     favicon: `${baseUrl}/favicons/favicon.ico?v=3`,
-    copyright: `All rights reserved ${new Date().getFullYear()}, Desci Cyou Labs`,
+    copyright: `All rights reserved ${new Date().getFullYear()}, AI Dim Sum Lab Labs`,
     feedLinks: {
       rss: `${baseUrl}/feeds/feed.xml`,
       json: `${baseUrl}/feeds/feed.json`,
@@ -41,7 +41,7 @@ export default async function buildRss() {
       </MemoryRouterProvider>
     )
     const html = ReactDOMServer.renderToStaticMarkup(mdx)
-    const postText = `<p><em>(The post <a href="${blogUrl}/${slug}">${meta.title}</a> appeared first on <a href="${blogUrl}">Desci Cyou Blog</a>.)</em></p>`
+    const postText = `<p><em>(The post <a href="${blogUrl}/${slug}">${meta.title}</a> appeared first on <a href="${blogUrl}">AI Dim Sum Lab Blog</a>.)</em></p>`
 
     let image = meta.ogImage ?? meta.image
     image = image

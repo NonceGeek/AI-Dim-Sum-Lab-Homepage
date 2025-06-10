@@ -252,7 +252,7 @@ export function BuildAnything() {
           <Widont>Build whatever you want, seriously.</Widont>
         </BigText>
         <Paragraph>
-          Because Desci Cyou APPis so low-level, it never encourages you to design the same site
+          Because AI Dim Sum Lab APPis so low-level, it never encourages you to design the same site
           twice. Even with the same color palette and sizing scale, it's easy to build the same
           component with a completely different look in the next project.
         </Paragraph>

@@ -1,6 +1,6 @@
-# Yue Lab Homepage
+# AI Dim Sum Lab Homepage
 
-Yue Lab Homepage uses [Next.js](https://nextjs.org/) for its documentation.
+AI Dim Sum Lab Homepage uses [Next.js](https://nextjs.org/) for its documentation.
 
 To run the project locally, first install the dependencies:
 
@@ -16,4 +16,4 @@ npm run dev
 
 ## License
 
-This project is not licensed under an open-source license and is the intellectual property of Desci Cyou Labs Inc. The source is available only as an educational resource and to accept fixes for minor mistakes.
+This project is not licensed under an open-source license and is the intellectual property of Ai Dim Sum Labs Inc. The source is available only as an educational resource and to accept fixes for minor mistakes.

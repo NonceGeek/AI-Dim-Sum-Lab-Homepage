@@ -21,7 +21,7 @@ export default function Blog({ posts }) {
           Latest Updates
         </h1>
         <p className="text-lg text-slate-700 dark:text-slate-400">
-          <Widont>All the latest Desci Cyou news, straight from the team.</Widont>
+          <Widont>All the latest AI Dim Sum Lab news, straight from the team.</Widont>
         </p>
         <section className="mt-3 max-w-sm sm:mx-auto sm:px-4">
           <h2 className="sr-only">Sign up for our newsletter</h2>
@@ -95,7 +95,7 @@ export default function Blog({ posts }) {
 Blog.layoutProps = {
   meta: {
     title: 'Blog',
-    description: 'All the latest Desci Cyou news, straight from the team.',
+    description: 'All the latest AI Dim Sum Lab news, straight from the team.',
   },
 }
 

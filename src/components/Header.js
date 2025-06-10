@@ -116,13 +116,45 @@ export function NavPopover({ display = 'md:hidden', className, ...props }) {
 
 export function NavItems() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const [isCorpusDropdownOpen, setIsCorpusDropdownOpen] = useState(false)
   
   return (
     <>
-      <li>
-        <Link href="https://search.aidimsum.com" target="_blank" className="hover:text-sky-500 dark:hover:text-sky-400">
+      <li className="relative">
+        <button 
+          className="flex items-center hover:text-sky-500 dark:hover:text-sky-400"
+          onClick={() => setIsCorpusDropdownOpen(!isCorpusDropdownOpen)}
+        >
           语料库
-        </Link>
+          <svg 
+            width="12" 
+            height="12" 
+            viewBox="0 0 12 12" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg"
+            className={`ml-1 transition-transform duration-200 ${isCorpusDropdownOpen ? 'rotate-180' : ''}`}
+          >
+            <path d="M2 4L6 8L10 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+        {isCorpusDropdownOpen && (
+          <div className="absolute top-full left-0 mt-1 py-2 w-48 bg-white dark:bg-slate-800 rounded-lg shadow-lg z-50">
+            <a 
+              href="https://search.aidimsum.com" 
+              target="_blank"
+              className="block px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-700"
+            >
+              搜索引擎
+            </a>
+            <a 
+              href="https://beta.search.aidimsum.com" 
+              target="_blank"
+              className="block px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-700"
+            >
+              搜索引擎（Beta）
+            </a>
+          </div>
+        )}
       </li>
       <li>
         <Link href="/topics" className="hover:text-sky-500 dark:hover:text-sky-400">

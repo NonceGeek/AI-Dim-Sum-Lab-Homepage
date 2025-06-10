@@ -229,7 +229,7 @@ export function DynamicViewportExample({
               }}
               initial="visible"
               animate={hidden ? 'hidden' : 'visible'}
-              // For some reason putting this in a Desci Cyou APPclass doesn't work
+              // For some reason putting this in a AI Dim Sum Lab APPclass doesn't work
               style={{ width: `${viewport.width - 12}px` }}
               className={clsx(
                 colorStyles,

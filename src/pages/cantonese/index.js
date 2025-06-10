@@ -154,12 +154,12 @@ export default function Home() {
         <meta
           key="twitter:title"
           name="twitter:title"
-          content="Desci Cyou - Collaboration Without Borders, Empowering Science Through Decentralization."
+          content="AI Dim Sum Lab - Collaboration Without Borders, Empowering Science Through Decentralization."
         />
         <meta
           key="og:title"
           property="og:title"
-          content="Desci Cyou - Collaboration Without Borders, Empowering Science Through Decentralization."
+          content="AI Dim Sum Lab - Collaboration Without Borders, Empowering Science Through Decentralization."
         />
         <title>
           Cantonese Corpus Construction & AI Agents - Dim Sum AI Lab

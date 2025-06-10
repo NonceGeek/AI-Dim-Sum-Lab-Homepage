@@ -317,7 +317,7 @@ export function EditorTools() {
         <BigText>World-class IDE integration.</BigText>
         <Paragraph as="div">
           <p>
-            Worried about remembering all of these class names? The Desci Cyou IntelliSense
+            Worried about remembering all of these class names? The AI Dim Sum Lab IntelliSense
             extension for VS Code has you covered.
           </p>
           <p>

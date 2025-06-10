@@ -50,7 +50,7 @@ export function SearchProvider({ children }) {
   })
 
   useEffect(() => {
-    // Prepend "Components" to Desci Cyou web app results that are shown in the "recent" view
+    // Prepend "Components" to AI Dim Sum Lab web app results that are shown in the "recent" view
     if (!isOpen) {
       let key = `__DOCSEARCH_RECENT_SEARCHES__${INDEX_NAME}`
       try {

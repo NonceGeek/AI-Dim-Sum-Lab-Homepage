@@ -123,7 +123,7 @@ function Site({ site, priority = false }) {
         </h2>
         {site.isTemplate && (
           <p
-            aria-label="This site is a Desci Cyou web app template"
+            aria-label="This site is a AI Dim Sum Lab web app template"
             className="ml-2 text-[0.6875rem] leading-5 px-1.5 border border-transparent font-semibold text-sky-500 bg-sky-100 rounded-full dark:bg-slate-600/50 dark:text-slate-200 dark:group-hover:bg-sky-500 dark:group-hover:text-white"
           >
             Template
@@ -171,7 +171,7 @@ export default function Showcase() {
         <div className="relative max-w-3xl px-4 sm:px-6 lg:px-8 mx-auto sm:text-center">
           <h1 className="text-sm leading-6 font-semibold text-sky-500">Showcase</h1>
           <p className="mt-6 text-[2.5rem] leading-none sm:text-6xl tracking-tight font-bold text-slate-900 dark:text-white">
-            You can build anything with Desci Cyou.
+            You can build anything with AI Dim Sum Lab.
           </p>
           <p className="mt-4 text-lg text-slate-600 dark:text-slate-400">
             Well not quite <em>anything</em>, like you can't build a spaceship with it. But you can
@@ -200,7 +200,7 @@ Showcase.layoutProps = {
   meta: {
     title: 'Example Showcase',
     description:
-      'Beautiful websites built with Desci Cyou, including marketing sites, SaaS applications, ecommerce stores, and more.',
+      'Beautiful websites built with AI Dim Sum Lab, including marketing sites, SaaS applications, ecommerce stores, and more.',
     ogImage: require('@/img/showcase/og.jpg'),
   },
 }

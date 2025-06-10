@@ -48,11 +48,11 @@ export function ReadyMadeComponents() {
         />
         <Caption className="text-indigo-500">Ready-made components</Caption>
         <BigText>
-          <Widont>Move even faster with Desci Cyou web app.</Widont>
+          <Widont>Move even faster with AI Dim Sum Lab web app.</Widont>
         </BigText>
         <Paragraph>
-          Desci Cyou web app is a collection of beautiful, fully responsive UI components, designed and
-          developed by us, the creators of Desci Cyou. It's got hundreds of ready-to-use examples
+          AI Dim Sum Lab web app is a collection of beautiful, fully responsive UI components, designed and
+          developed by us, the creators of AI Dim Sum Lab. It's got hundreds of ready-to-use examples
           to choose from, and is guaranteed to help you find the perfect starting point for what you
           want to build.
         </Paragraph>

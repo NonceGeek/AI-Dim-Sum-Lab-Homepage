@@ -122,7 +122,7 @@ export default async function handler(req, res) {
   let $ = cheerio.load(body)
   let title = $('title')
     .text()
-    .replace(/ [-–] Desci Cyou$/, '')
+    .replace(/ [-–] AI Dim Sum Lab$/, '')
 
   if (!title) {
     res.statusCode = 500

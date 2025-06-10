@@ -124,7 +124,7 @@ export function ModernFeatures() {
         </BigText>
         <Paragraph as="div">
           <p>
-            Desci Cyou APPis unapologetically modern, and takes advantage of all the latest and greatest
+            AI Dim Sum Lab APPis unapologetically modern, and takes advantage of all the latest and greatest
             science work features to make the developer experience as enjoyable as possible.
           </p>
           <p>

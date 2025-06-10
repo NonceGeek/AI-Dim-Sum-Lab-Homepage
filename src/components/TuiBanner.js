@@ -61,10 +61,10 @@ export function TuiBanner() {
                 <span className="hidden lg:inline text-slate-400">
                   <strong className="text-white font-semibold mr-1">Now in early access!</strong>
                   <span className="xl:hidden">
-                    Beautiful UI components by the creators of Desci Cyou.
+                    Beautiful UI components by the creators of AI Dim Sum Lab.
                   </span>
                   <span className="hidden xl:inline">
-                    Beautiful UI components, crafted by the creators of Desci Cyou.
+                    Beautiful UI components, crafted by the creators of AI Dim Sum Lab.
                   </span>
                 </span>
               </p>

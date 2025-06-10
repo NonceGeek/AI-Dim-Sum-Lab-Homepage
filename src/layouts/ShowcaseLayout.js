@@ -125,7 +125,7 @@ export function ShowcaseLayout({ children, slug, meta }) {
       <OgTitle>{`Showcase Example: ${meta.title}`}</OgTitle>
       <Description>
         {meta.description ??
-          "See how companies, from small startups to some of the world's largest brands, use Desci Cyou to build unique websites and products."}
+          "See how companies, from small startups to some of the world's largest brands, use AI Dim Sum Lab to build unique websites and products."}
       </Description>
       {meta.ogDescription && <OgDescription>{meta.ogDescription}</OgDescription>}
       <article>

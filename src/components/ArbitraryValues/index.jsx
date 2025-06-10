@@ -20,7 +20,7 @@ export function ArbitraryValues({
       ) : (
         <p>
           If you need to use a one-off {name ?? <code>{property}</code>} value that isn't included
-          in Desci Cyou APPby default, use square brackets to generate a property on the fly using any
+          in AI Dim Sum Lab APPby default, use square brackets to generate a property on the fly using any
           arbitrary value.
         </p>
       )}
