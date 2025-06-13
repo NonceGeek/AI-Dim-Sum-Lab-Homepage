@@ -53,6 +53,7 @@ export default function Kanban() {
               title
               url
               repository { name }
+              number
             }
             ... on PullRequest {
               title
@@ -130,29 +131,46 @@ export default function Kanban() {
           <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-sky-500 dark:border-sky-300"></div>
         </div>
       ) : (
-        <div className="flex gap-4 overflow-x-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-screen-2xl mx-auto">
           {columns.map((col, idx) => (
-            <div key={col.name} className="bg-slate-100 dark:bg-slate-800 rounded-lg p-4 min-w-[280px] w-80 flex-shrink-0">
-              <h2 className="text-lg font-bold mb-4 text-slate-700 dark:text-slate-200 text-center">{col.name}</h2>
+            <div key={col.name} className="bg-slate-100 dark:bg-slate-800 rounded-lg p-4 min-w-0">
+              <div className="flex items-center justify-between mb-1">
+                <div className="flex items-center gap-2">
+                  {/* Status icon color by column name */}
+                  {col.name === 'Todo' && <span className="w-4 h-4 rounded-full border-2 border-green-500 flex items-center justify-center"><span className="w-2 h-2 bg-green-500 rounded-full"></span></span>}
+                  {col.name === 'In Progress' && <span className="w-4 h-4 rounded-full border-2 border-yellow-500 flex items-center justify-center"><span className="w-2 h-2 bg-yellow-500 rounded-full"></span></span>}
+                  {col.name === 'Done' && <span className="w-4 h-4 rounded-full border-2 border-purple-500 flex items-center justify-center"><span className="w-2 h-2 bg-purple-500 rounded-full"></span></span>}
+                  <span className="text-lg font-bold text-slate-700 dark:text-slate-200">{col.name}</span>
+                  <span className="ml-2 text-xs font-semibold bg-slate-700/20 dark:bg-slate-200/10 text-slate-500 dark:text-slate-300 rounded-full px-2 py-0.5">{col.items.length}</span>
+                </div>
+                <span className="text-slate-400">•••</span>
+              </div>
+              <div className="mb-4 text-sm text-slate-400 dark:text-slate-400">
+                {/* Description for each column, fallback if not available */}
+                {col.name === 'Todo' && "This item hasn't been started"}
+                {col.name === 'In Progress' && 'This is actively being worked on'}
+                {col.name === 'Done' && 'This has been completed'}
+              </div>
               <div className="space-y-4">
                 {col.items.length === 0 && (
                   <div className="text-slate-400 text-center">No items</div>
                 )}
                 {col.items.map((item, i) => (
-                  <article key={i} className="relative group bg-white dark:bg-slate-900 rounded-xl shadow p-4 flex items-center gap-3 hover:bg-slate-50 dark:hover:bg-slate-800 transition">
-                    <img
-                      src={getRepoAvatar(item.url)}
-                      alt="repo avatar"
-                      className="w-8 h-8 rounded-full border flex-shrink-0"
-                      onError={e => (e.target.src = 'https://avatars.githubusercontent.com/u/9919?s=200&v=4')}
-                    />
+                  <article key={i} className="relative group bg-white dark:bg-slate-900 rounded-xl shadow p-4 flex items-center hover:bg-slate-50 dark:hover:bg-slate-800 transition">
                     <div className="flex-1 min-w-0">
-                      <div className="font-medium text-slate-900 dark:text-slate-100 truncate">{item.title}</div>
-                      <div className="text-xs text-slate-500 dark:text-slate-400 truncate">{item.repository?.name}</div>
+                      <div className="text-xs text-slate-500 dark:text-slate-400 mb-1">
+                        {item.repository?.name}#{item.number}
+                      </div>
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-sky-500 whitespace-pre-line break-words transition hover:underline hover:text-sky-400 dark:hover:text-sky-300"
+                        style={{overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 6, WebkitBoxOrient: 'vertical'}}
+                      >
+                        {item.title}
+                      </a>
                     </div>
-                    <Link href={item.url} className="ml-2 text-sky-500 text-xs font-medium" target="_blank" rel="noopener noreferrer">
-                      View
-                    </Link>
                   </article>
                 ))}
               </div>
