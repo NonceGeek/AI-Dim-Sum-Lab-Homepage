@@ -46,7 +46,7 @@ export default function Kanban() {
           }
         }
       }
-      items(first: 20) {
+      items(first: 100) {
         nodes {
           content {
             ... on Issue {
@@ -54,11 +54,12 @@ export default function Kanban() {
               url
               repository { name }
               number
-            }
-            ... on PullRequest {
-              title
-              url
-              repository { name }
+              assignees(first: 5) {
+                nodes {
+                  login
+                  avatarUrl
+                }
+              }
             }
           }
           fieldValues(first: 10) {
@@ -171,6 +172,19 @@ export default function Kanban() {
                         {item.title}
                       </a>
                     </div>
+                    {item.assignees && item.assignees.nodes.length > 0 && (
+                      <div className="flex flex-row items-center ml-2 space-x-[-8px]">
+                        {item.assignees.nodes.map((assignee, idx) => (
+                          <img
+                            key={assignee.login}
+                            src={assignee.avatarUrl}
+                            alt={assignee.login}
+                            className="w-7 h-7 rounded-full border-2 border-slate-800 dark:border-slate-100 bg-white"
+                            style={{zIndex: 10 - idx}}
+                          />
+                        ))}
+                      </div>
+                    )}
                   </article>
                 ))}
               </div>
