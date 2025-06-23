@@ -21,11 +21,27 @@ import styles from './index.module.css'
 import clsx from 'clsx'
 import { ThemeToggle } from '@/components/ThemeToggle'
 import socialCardLarge from '@/img/social-card-large.jpg'
+import { useState, useEffect } from 'react'
 
 import urania from '@/img/urania.png'
 import StarryBackground from '@/components/starry-background'
 
 function Header() {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    
+    return () => {
+      window.removeEventListener('resize', checkMobile)
+    }
+  }, [])
+
   return (
     <header className="relative">
       <div className="px-4 sm:px-6 md:px-8">
@@ -42,82 +58,89 @@ function Header() {
               WebkitMaskImage: 'linear-gradient(to bottom, transparent, black)',
             }}
           /> */}
+          {/* HINT: 星系效果 */}
           <StarryBackground />
         </div>
-        <div className="relative pt-6 lg:pt-8 flex items-center justify-between text-slate-700 font-semibold text-sm leading-6 dark:text-slate-200">
-          <div className="flex items-center">
-            <Logo className="w-auto h-10 mr-8" />
-            <nav>
-              <ul className="flex items-center gap-x-8">
+        <div 
+          className={clsx(
+            "relative pt-6 lg:pt-8 flex items-center justify-between text-slate-700 font-semibold text-sm leading-6 dark:text-slate-200",
+            isMobile && "!bg-black/60 !backdrop-blur-md !text-white supports-backdrop-blur:!bg-black/40 rounded-lg p-4 mt-2 justify-center"
+          )}
+          style={isMobile ? {
+            backgroundColor: 'rgba(0, 0, 0, 0.6)',
+            backdropFilter: 'blur(12px)',
+            color: 'white'
+          } : {}}
+        >
+          {isMobile ? (
+            // Mobile layout - only show the three main navigation items centered
+            <nav className="w-full">
+              <ul className="flex items-center justify-center gap-x-6">
                 <NavItems />
               </ul>
             </nav>
-          </div>
-          <div className="flex items-center">
-            <SearchButton className="text-slate-500 hover:text-slate-600 w-8 h-8 -my-1 flex items-center justify-center md:hidden dark:hover:text-slate-300">
-              <span className="sr-only">Search</span>
-              <svg
-                width="24"
-                height="24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <path d="m19 19-3.5-3.5" />
-                <circle cx="11" cy="11" r="6" />
-              </svg>
-            </SearchButton>
-            <NavPopover className="-my-1 ml-2 -mr-1" display="md:hidden" />
-            <div className="hidden md:flex items-center">
-              <div className="flex items-center border-l border-slate-200 ml-6 pl-6 dark:border-slate-800">
-                <ThemeToggle />
-                <a
-                  href="https://github.com/NonceGeek/awesome-ai-dimsum/"
-                  className="ml-6 block text-slate-400 hover:text-slate-500 dark:hover:text-slate-300"
-                >
-                  <span className="sr-only">Lab on GitHub</span>
-                  <svg
-                    viewBox="0 0 16 16"
-                    className="w-5 h-5"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
-                  </svg>
-                </a>
-                {/* Language switcher dropdown */}
-                <div className="relative ml-6">
-                  <select
-                    onChange={(e) => (window.location.href = e.target.value)}
-                    className="appearance-none bg-transparent border-none text-slate-400 hover:text-slate-500 dark:hover:text-slate-300 cursor-pointer pr-6"
-                    defaultValue=""
-                  >
-                    <option value="/">&nbsp;&nbsp;&nbsp;&nbsp;中文</option>
-                    <option value="/en">English</option>
-                    <option value="/cantonese">&nbsp;&nbsp;&nbsp;&nbsp;粤语</option>
-                  </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center">
-                    <svg
-                      className="h-4 w-4 text-slate-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+          ) : (
+            // Desktop layout - original layout
+            <>
+              <div className="flex items-center">
+                <Logo className="w-auto h-10 mr-8" />
+                <nav>
+                  <ul className="flex items-center gap-x-8">
+                    <NavItems />
+                  </ul>
+                </nav>
+              </div>
+              <div className="flex items-center">
+                <NavPopover className="-my-1 ml-2 -mr-1" display="md:hidden" />
+                <div className="hidden md:flex items-center">
+                  <div className="flex items-center border-l border-slate-200 ml-6 pl-6 dark:border-slate-800">
+                    <ThemeToggle />
+                    <a
+                      href="https://github.com/NonceGeek/awesome-ai-dimsum/"
+                      className="ml-6 block text-slate-400 hover:text-slate-500 dark:hover:text-slate-300"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
+                      <span className="sr-only">Lab on GitHub</span>
+                      <svg
+                        viewBox="0 0 16 16"
+                        className="w-5 h-5"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                      </svg>
+                    </a>
+                    {/* Language switcher dropdown */}
+                    <div className="relative ml-6">
+                      <select
+                        onChange={(e) => (window.location.href = e.target.value)}
+                        className="appearance-none bg-transparent border-none text-slate-400 hover:text-slate-500 dark:hover:text-slate-300 cursor-pointer pr-6"
+                        defaultValue=""
+                      >
+                        <option value="/">&nbsp;&nbsp;&nbsp;&nbsp;普通话</option>
+                        <option value="/en">English</option>
+                        <option value="/cantonese">&nbsp;&nbsp;&nbsp;&nbsp;粤语</option>
+                      </select>
+                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center">
+                        <svg
+                          className="h-4 w-4 text-slate-400"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+            </>
+          )}
         </div>
         <div className="relative max-w-5xl mx-auto pt-20">
           <br></br><br></br><br></br>

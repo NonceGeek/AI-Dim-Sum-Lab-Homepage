@@ -120,12 +120,12 @@ export function NavItems() {
   
   return (
     <>
-      <li className="relative">
+      <li className="relative whitespace-nowrap">
         <button 
           className="flex items-center hover:text-sky-500 dark:hover:text-sky-400"
           onClick={() => setIsCorpusDropdownOpen(!isCorpusDropdownOpen)}
         >
-          语料库
+          主程序
           <svg 
             width="12" 
             height="12" 
@@ -140,14 +140,14 @@ export function NavItems() {
         {isCorpusDropdownOpen && (
           <div className="absolute top-full left-0 mt-1 py-2 w-48 bg-white dark:bg-slate-800 rounded-lg shadow-lg z-50">
             <a 
-              href="https://search.aidimsum.com" 
+              href="https://search.aidimsum.com/appStore" 
               target="_blank"
               className="block px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-700"
             >
               搜索引擎
             </a>
             <a 
-              href="https://beta.search.aidimsum.com" 
+              href="https://app.aidimsum.com" 
               target="_blank"
               className="block px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-700"
             >
@@ -156,14 +156,14 @@ export function NavItems() {
           </div>
         )}
       </li>
-      <li>
-        <Link href="/topics" className="hover:text-sky-500 dark:hover:text-sky-400">
-          课题
+      <li className="whitespace-nowrap">
+        <Link href="https://search.aidimsum.com/appStore" className="hover:text-sky-500 dark:hover:text-sky-400">
+          应用
         </Link>
       </li>
-      <li>
-        <Link href="/papers" className="hover:text-sky-500 dark:hover:text-sky-400">
-          论文
+      <li className="whitespace-nowrap">
+        <Link href="https://github.com/orgs/NonceGeek/projects/11/views/2" className="hover:text-sky-500 dark:hover:text-sky-400">
+          开发任务面板
         </Link>
       </li>
       <li>
@@ -235,13 +235,14 @@ export function NavItems() {
             </a>
           </div>
         )}
-      </li>
+      </li> */}
     </>
   )
 }
 
 export function Header({ hasNav = false, navIsOpen, onNavToggle, title, section }) {
   let [isOpaque, setIsOpaque] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
     let offset = 50
@@ -258,6 +259,19 @@ export function Header({ hasNav = false, navIsOpen, onNavToggle, title, section 
       window.removeEventListener('scroll', onScroll, { passive: true })
     }
   }, [isOpaque])
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    
+    return () => {
+      window.removeEventListener('resize', checkMobile)
+    }
+  }, [])
 
   return (
     <>
@@ -289,14 +303,21 @@ export function Header({ hasNav = false, navIsOpen, onNavToggle, title, section 
       <div
         className={clsx(
           'sticky top-0 z-40 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06]',
-          isOpaque
-            ? 'bg-white supports-backdrop-blur:bg-white/95 dark:bg-slate-900/75'
-            : 'bg-white/95 supports-backdrop-blur:bg-white/60 dark:bg-transparent'
+          isMobile 
+            ? '!bg-black/60 !backdrop-blur-md !text-white supports-backdrop-blur:!bg-black/40'
+            : isOpaque
+              ? 'bg-white supports-backdrop-blur:bg-white/95 dark:bg-slate-900/75'
+              : 'bg-white/95 supports-backdrop-blur:bg-white/60 dark:bg-transparent'
         )}
+        style={isMobile ? {
+          backgroundColor: 'rgba(0, 0, 0, 0.6)',
+          backdropFilter: 'blur(12px)',
+          color: 'white'
+        } : {}}
       >
         <div className="max-w-8xl mx-auto">
           {hasNav && (
-            <div className="flex items-center p-4 border-b border-slate-900/10 lg:hidden dark:border-slate-50/[0.06]">
+            <div className="flex items-center justify-between p-4 border-b border-slate-900/10 lg:hidden dark:border-slate-50/[0.06]">
               <button
                 type="button"
                 onClick={() => onNavToggle(!navIsOpen)}
@@ -314,9 +335,9 @@ export function Header({ hasNav = false, navIsOpen, onNavToggle, title, section 
                 </svg>
               </button>
               {title && (
-                <ol className="ml-4 flex text-sm leading-6 whitespace-nowrap min-w-0">
+                <ol className="ml-4 flex flex-nowrap items-center text-sm leading-6 overflow-hidden">
                   {section && (
-                    <li className="flex items-center">
+                    <li className="flex items-center flex-shrink-0">
                       {section}
                       <svg
                         width="3"
