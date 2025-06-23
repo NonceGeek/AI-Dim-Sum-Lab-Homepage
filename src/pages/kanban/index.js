@@ -1,19 +1,11 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 
-const API_URL = 'https://api.github.com/graphql'
-const GITHUB_TOKEN = process.env.NEXT_PUBLIC_GITHUB_TOKEN
+// const API_URL = process.env.NODE_ENV === 'production'
+//   ? 'https://your-deno-server.com/api/kanban'  // 生产环境：部署的 Deno 服务器地址
+//   : 'http://localhost:8000/api/kanban'         // 开发环境：本地 Deno 服务器
 
-function getRepoAvatar(url) {
-  try {
-    const match = url.match(/github.com\/(.*?)\//)
-    if (match) {
-      const [_, owner] = match
-      return `https://github.com/${owner}.png`
-    }
-  } catch {}
-  return 'https://avatars.githubusercontent.com/u/9919?s=200&v=4'
-}
+const API_URL = "https://ai-dimsum-lab-homepage.deno.dev/api/kanban"
 
 export default function Kanban() {
   const [columns, setColumns] = useState([])
@@ -23,66 +15,30 @@ export default function Kanban() {
     async function fetchData() {
       setLoading(true)
       try {
+        // 简化的请求，不需要传递复杂的查询和 token
         const res = await fetch(API_URL, {
-          method: 'POST',
+          method: 'GET',
           headers: {
             'Content-Type': 'application/json',
-            ...(GITHUB_TOKEN ? { Authorization: `Bearer ${GITHUB_TOKEN}` } : {}),
           },
-          body: JSON.stringify({
-            query: `query {
-  organization(login: \"NonceGeek\") {
-    projectV2(number: 11) {
-      title
-      fields(first: 20) {
-        nodes {
-          ... on ProjectV2SingleSelectField {
-            id
-            name
-            options {
-              id
-              name
-            }
-          }
-        }
-      }
-      items(first: 100) {
-        nodes {
-          content {
-            ... on Issue {
-              title
-              url
-              repository { name }
-              number
-              assignees(first: 5) {
-                nodes {
-                  login
-                  avatarUrl
-                }
-              }
-            }
-          }
-          fieldValues(first: 10) {
-            nodes {
-              ... on ProjectV2ItemFieldSingleSelectValue {
-                field {
-                  ... on ProjectV2SingleSelectField {
-                    name
-                  }
-                }
-                optionId
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}`,
-          }),
         })
+        
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`)
+        }
+        
         const data = await res.json()
+        
+        if (data.errors) {
+          console.error('GitHub API errors:', data.errors)
+          throw new Error('GitHub API returned errors')
+        }
+        
         const project = data?.data?.organization?.projectV2
+        if (!project) {
+          throw new Error('Project data not found')
+        }
+        
         // Find the status field (usually the only single-select field)
         const statusField = project.fields.nodes.find((f) => f.name === 'Status')
         const statusOptions = statusField ? statusField.options : []
@@ -109,7 +65,7 @@ export default function Kanban() {
         const columnsArr = statusOptions.map((opt) => columnsMap[opt.id])
         setColumns(columnsArr)
       } catch (e) {
-        // 可加错误提示
+        console.error('Error fetching kanban data:', e)
       } finally {
         setLoading(false)
       }
