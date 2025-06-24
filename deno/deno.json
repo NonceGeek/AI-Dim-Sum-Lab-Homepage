@@ -1,0 +1,18 @@
+{
+  "tasks": {
+    "start": "deno run --allow-net --allow-env --allow-read ./main.ts",
+    "dev": "deno run --allow-net --allow-env --allow-read --watch ./main.ts"
+  },
+  "imports": {
+    "oak": "https://deno.land/x/oak@v12.6.1/mod.ts",
+    "cors": "https://deno.land/x/cors@v1.2.2/mod.ts"
+  },
+  "deploy": {
+    "project": "0c14e354-8a21-437d-b1de-6daaddc33405",
+    "exclude": [
+      "**/node_modules"
+    ],
+    "include": [],
+    "entrypoint": "main.ts"
+  }
+}

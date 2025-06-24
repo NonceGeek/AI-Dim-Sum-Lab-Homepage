@@ -166,7 +166,11 @@ export function NavItems() {
           开发任务面板
         </Link>
       </li>
-      {/* 
+      <li>
+        <Link href="/kanban" className="hover:text-sky-500 dark:hover:text-sky-400">
+          看板
+        </Link>
+      </li>
       <li className="relative">
         <button 
           className="flex items-center hover:text-sky-500 dark:hover:text-sky-400"

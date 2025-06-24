@@ -1,0 +1,17 @@
+# 敏感配置文件
+config.json
+
+# Deno 缓存
+.deno_dir/
+
+# 日志文件
+*.log
+
+# 环境变量文件
+.env
+.env.local
+.env.production
+
+# 临时文件
+*.tmp
+*.temp 
