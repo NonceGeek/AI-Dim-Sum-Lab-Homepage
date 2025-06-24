@@ -162,11 +162,6 @@ export function NavItems() {
         </Link>
       </li>
       <li className="whitespace-nowrap">
-        <Link href="https://github.com/orgs/NonceGeek/projects/11/views/2" className="hover:text-sky-500 dark:hover:text-sky-400">
-          开发任务面板
-        </Link>
-      </li>
-      <li>
         <Link href="/kanban" className="hover:text-sky-500 dark:hover:text-sky-400">
           看板
         </Link>
@@ -235,7 +230,7 @@ export function NavItems() {
             </a>
           </div>
         )}
-      </li> */}
+      </li>
     </>
   )
 }
