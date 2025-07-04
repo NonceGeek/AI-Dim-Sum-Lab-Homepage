@@ -1,0 +1,952 @@
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: light, dark --default;
+  root: ":root";
+  logs: true;
+}
+
+@plugin "daisyui/theme" {
+  name: "light";
+  color-scheme: light;
+  
+  --color-base-100: oklch(100% 0 0); /* 纯白色 */
+  --color-base-200: oklch(98% 0.01 240); 
+  --color-base-300: oklch(96% 0.02 240); 
+  --color-base-content: oklch(20% 0.05 240);
+  
+  --color-primary: oklch(55% 0.3 240);
+  --color-primary-content: oklch(98% 0.01 240);
+  --color-secondary: oklch(70% 0.25 200);
+  --color-secondary-content: oklch(98% 0.01 200);
+  --color-accent: oklch(65% 0.25 160);
+  --color-accent-content: oklch(98% 0.01 160);
+  --color-neutral: oklch(50% 0.05 240);
+  --color-neutral-content: oklch(98% 0.01 240);
+  --color-info: oklch(70% 0.2 220);
+  --color-info-content: oklch(98% 0.01 220);
+  --color-success: oklch(65% 0.25 140);
+  --color-success-content: oklch(98% 0.01 140);
+  --color-warning: oklch(80% 0.25 80);
+  --color-warning-content: oklch(20% 0.05 80);
+  --color-error: oklch(65% 0.3 30);
+  --color-error-content: oklch(98% 0.01 30);
+}
+
+@plugin "daisyui/theme" {
+  name: "dark";
+  color-scheme: dark;
+  
+  --color-base-100: oklch(12% 0.02 280); /* 深紫色背景 */
+  --color-base-200: oklch(18% 0.03 280); /* 稍浅的深紫色 */
+  --color-base-300: oklch(24% 0.04 280); /* 更浅的深紫色，用于组件背景 */
+  --color-base-content: oklch(92% 0.01 280); /* 浅色文字 */
+  
+  --color-primary: oklch(75% 0.3 280); /* 更亮的紫色主色调 */
+  --color-primary-content: oklch(12% 0.01 280);
+  --color-secondary: oklch(70% 0.25 260); /* 更亮的蓝紫色次要色 */
+  --color-secondary-content: oklch(12% 0.01 260);
+  --color-accent: oklch(65% 0.25 300); /* 更亮的粉紫色强调色 */
+  --color-accent-content: oklch(12% 0.01 300);
+  --color-neutral: oklch(45% 0.05 280); /* 中性紫色 */
+  --color-neutral-content: oklch(92% 0.01 280);
+  --color-info: oklch(70% 0.2 240); /* 更亮的蓝紫色信息色 */
+  --color-info-content: oklch(12% 0.01 240);
+  --color-success: oklch(65% 0.25 140); /* 更亮的绿色成功色 */
+  --color-success-content: oklch(12% 0.01 140);
+  --color-warning: oklch(75% 0.25 80); /* 更亮的橙色警告色 */
+  --color-warning-content: oklch(12% 0.01 80);
+  --color-error: oklch(65% 0.3 30); /* 更亮的红色错误色 */
+  --color-error-content: oklch(12% 0.01 30);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter), var(--font-noto-sans-sc), var(--font-noto-sans-hk), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), 'Noto Sans Mono', 'Source Code Pro', 'Fira Code', 'Cascadia Code', 'Monaco', 'Consolas', monospace;
+}
+
+/* 字体类名定义 */
+.font-tech {
+  font-family: var(--font-inter), var(--font-noto-sans-sc), var(--font-noto-sans-hk), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.font-mono-tech {
+  font-family: var(--font-jetbrains-mono), 'Noto Sans Mono', 'Source Code Pro', 'Fira Code', 'Cascadia Code', 'Monaco', 'Consolas', monospace;
+}
+
+.font-chinese {
+  font-family: var(--font-noto-sans-sc), var(--font-noto-sans-hk), 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+}
+
+.font-cantonese {
+  font-family: var(--font-noto-sans-hk), var(--font-noto-sans-sc), 'PingFang HK', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-feature-settings: 'liga' 1, 'calt' 1, 'ss01' 1, 'ss02' 1, 'ss03' 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* 科技感字体效果 */
+.tech-text {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  font-feature-settings: 'liga' 1, 'calt' 1, 'ss01' 1, 'ss02' 1, 'ss03' 1;
+}
+
+.tech-heading {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  font-feature-settings: 'liga' 1, 'calt' 1, 'ss01' 1, 'ss02' 1, 'ss03' 1;
+}
+
+.tech-mono {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-feature-settings: 'liga' 1, 'calt' 1;
+}
+
+/* 单入动画效果 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 动画类 */
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.6s ease-out forwards;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.6s ease-out forwards;
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 0.6s ease-out forwards;
+}
+
+/* 延迟动画 */
+.animate-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animate-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animate-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animate-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.animate-delay-500 {
+  animation-delay: 0.5s;
+}
+
+/* 初始状态 */
+.animate-fade-in-up,
+.animate-fade-in-left,
+.animate-fade-in-right,
+.animate-fade-in-scale {
+  opacity: 0;
+}
+
+/* Hero 组件自定义动画 */
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Hero 渐变文字动画 */
+.hero-gradient-text {
+  background: linear-gradient(45deg, var(--color-primary), var(--color-secondary), var(--color-accent), var(--color-primary));
+  background-size: 300% 300%;
+  animation: gradientShift 3s ease-in-out infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 装饰圆圈动画 */
+.decorative-circle {
+  animation: float 6s ease-in-out infinite;
+}
+
+.decorative-circle:nth-child(2) {
+  animation-delay: -2s;
+}
+
+.decorative-circle:nth-child(3) {
+  animation-delay: -4s;
+}
+
+/* 滚动指示器动画 */
+.scroll-indicator {
+  animation: scrollBounce 2s ease-in-out infinite;
+  position: relative;
+  transform-origin: center bottom;
+}
+
+.scroll-indicator::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.4), transparent);
+  border-radius: inherit;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  0% {
+    transform: translateY(0) scaleY(1);
+  }
+  25% {
+    transform: translateY(-4px) scaleY(0.8);
+  }
+  50% {
+    transform: translateY(-8px) scaleY(1.2);
+  }
+  75% {
+    transform: translateY(-4px) scaleY(0.9);
+  }
+  100% {
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%) scaleY(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100%) scaleY(0.5);
+  }
+}
+
+/* Hero 组件自定义动画 */
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(var(--color-primary), 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(var(--color-primary), 0.6);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Hero 渐变文字动画 */
+.hero-gradient-text {
+  background: linear-gradient(45deg, var(--color-primary), var(--color-secondary), var(--color-accent), var(--color-primary));
+  background-size: 300% 300%;
+  animation: gradientShift 3s ease-in-out infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 装饰圆圈动画 */
+.decorative-circle {
+  animation: float 6s ease-in-out infinite;
+}
+
+.decorative-circle:nth-child(2) {
+  animation-delay: -2s;
+}
+
+.decorative-circle:nth-child(3) {
+  animation-delay: -4s;
+}
+
+/* 按钮光效动画 */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-shimmer:hover::before {
+  left: 100%;
+}
+
+/* 滚动指示器动画 */
+.scroll-indicator {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* ===== 渐变流动动画样式 ===== */
+
+/* Logo 光晕动画 */
+.logo-glow {
+  position: relative;
+  z-index: 1;
+}
+
+.logo-glow::before {
+  content: "";
+  position: absolute;
+  inset: -30%; /* 比 logo 大一圈 */
+  z-index: -1;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent), var(--color-primary));
+  background-size: 300% 300%;
+  filter: blur(32px);
+  opacity: 0.7;
+  border-radius: 50%;
+  animation: glowGradient 8s linear infinite;
+}
+
+@keyframes glowGradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* 多层渐变流动动画 */
+.gradient-flow-primary {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent), var(--color-primary));
+  background-size: 400% 400%;
+  animation: gradientFlow 8s linear infinite;
+}
+
+.gradient-flow-secondary {
+  background: linear-gradient(135deg, var(--color-accent), var(--color-primary), var(--color-secondary), var(--color-accent));
+  background-size: 300% 300%;
+  animation: gradientFlow 6s linear infinite reverse;
+}
+
+@keyframes gradientFlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* 渐变文字流动效果 */
+.gradient-text-flow {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent), var(--color-primary));
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFlow 6s linear infinite;
+}
+
+/* 渐变边框流动效果 */
+.gradient-border-flow {
+  position: relative;
+  background: var(--color-base-100);
+  border-radius: 0.5rem;
+}
+
+.gradient-border-flow::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent), var(--color-primary));
+  background-size: 400% 400%;
+  border-radius: 0.5rem;
+  z-index: -1;
+  animation: gradientFlow 8s linear infinite;
+}
+
+/* 渐变按钮流动效果 */
+.btn-gradient-flow {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent), var(--color-primary));
+  background-size: 300% 300%;
+  animation: gradientFlow 6s linear infinite;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient-flow:hover {
+  background-size: 200% 200%;
+  animation-duration: 3s;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Features 组件科技感动画 ===== */
+
+/* 扫描线效果 */
+@keyframes scanLine {
+  0% { transform: translateX(-100%) skewX(-12deg); }
+  100% { transform: translateX(100%) skewX(-12deg); }
+}
+
+.scan-line {
+  animation: scanLine 2s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+/* 数据流效果 */
+@keyframes dataFlow {
+  0% { 
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  50% { 
+    opacity: 1;
+  }
+  100% { 
+    transform: translateX(10px);
+    opacity: 0;
+  }
+}
+
+.data-flow {
+  animation: dataFlow 2s ease-in-out infinite;
+}
+
+.data-flow:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.data-flow:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* 脉冲波纹效果 */
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.pulse-ring {
+  animation: pulseRing 1.5s ease-out infinite;
+}
+
+.pulse-ring:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.pulse-ring:nth-child(3) {
+  animation-delay: 1s;
+}
+
+/* 悬停时的光晕扩散 */
+@keyframes glowExpand {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
+.glow-expand {
+  animation: glowExpand 1s ease-out infinite;
+}
+
+/* 科技感边框动画 */
+@keyframes techBorder {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.tech-border {
+  background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+  background-size: 200% 100%;
+  animation: techBorder 3s linear infinite;
+}
+
+/* 浮动粒子效果 */
+@keyframes floatingParticles {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.7;
+  }
+  33% {
+    transform: translateY(-10px) rotate(120deg);
+    opacity: 1;
+  }
+  66% {
+    transform: translateY(5px) rotate(240deg);
+    opacity: 0.8;
+  }
+}
+
+.floating-particles {
+  animation: floatingParticles 4s ease-in-out infinite;
+}
+
+.floating-particles:nth-child(2) {
+  animation-delay: 1.3s;
+}
+
+.floating-particles:nth-child(3) {
+  animation-delay: 2.6s;
+}
+
+/* 全息效果 */
+@keyframes holographic {
+  0%, 100% {
+    background-position: 0% 50%;
+    filter: hue-rotate(0deg);
+  }
+  25% {
+    background-position: 100% 50%;
+    filter: hue-rotate(90deg);
+  }
+  50% {
+    background-position: 0% 100%;
+    filter: hue-rotate(180deg);
+  }
+  75% {
+    background-position: 100% 100%;
+    filter: hue-rotate(270deg);
+  }
+}
+
+.holographic {
+  background: linear-gradient(45deg, var(--color-primary), var(--color-secondary), var(--color-accent), var(--color-info));
+  background-size: 400% 400%;
+  animation: holographic 8s ease-in-out infinite;
+}
+
+/* ===== 增强光源效果动画 ===== */
+
+/* 径向渐变动画 */
+@keyframes radialPulse {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+    opacity: 0.6;
+  }
+}
+
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+  animation: radialPulse 6s ease-in-out infinite;
+}
+
+/* 光线扫描动画 */
+@keyframes lightSweep {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.light-sweep {
+  animation: lightSweep 4s ease-in-out infinite;
+}
+
+/* 光点闪烁动画 */
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+  25% {
+    opacity: 0.8;
+    transform: scale(1.2);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  75% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.sparkle {
+  animation: sparkle 3s ease-in-out infinite;
+}
+
+/* 网格闪烁效果 */
+@keyframes gridFlicker {
+  0%, 100% {
+    opacity: 0.05;
+  }
+  50% {
+    opacity: 0.15;
+  }
+}
+
+.grid-flicker {
+  animation: gridFlicker 8s ease-in-out infinite;
+}
+
+/* 边缘光晕呼吸效果 */
+@keyframes edgeGlow {
+  0%, 100% {
+    opacity: 0.1;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.1);
+  }
+}
+
+.edge-glow {
+  animation: edgeGlow 5s ease-in-out infinite;
+}
+
+/* 动态光线移动 */
+@keyframes lightRay {
+  0% {
+    transform: translateX(-50%) scaleX(0);
+    opacity: 0;
+  }
+  25% {
+    transform: translateX(-25%) scaleX(0.5);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateX(0%) scaleX(1);
+    opacity: 1;
+  }
+  75% {
+    transform: translateX(25%) scaleX(0.5);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(50%) scaleX(0);
+    opacity: 0;
+  }
+}
+
+.light-ray {
+  animation: lightRay 6s ease-in-out infinite;
+}
+
+/* 中央光源脉冲 */
+@keyframes centralPulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.2;
+  }
+  33% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.4;
+  }
+  66% {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.3;
+  }
+}
+
+.central-pulse {
+  animation: centralPulse 8s ease-in-out infinite;
+}
+
+/* 光环扩散效果 */
+@keyframes haloExpansion {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.halo-expansion {
+  animation: haloExpansion 4s ease-out infinite;
+}
+
+/* ===== 外发光效果增强 ===== */
+
+/* 脉冲外发光效果 */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 
+      0 0 5px rgba(var(--color-primary), 0.2),
+      0 0 10px rgba(var(--color-primary), 0.1),
+      0 0 15px rgba(var(--color-primary), 0.05);
+  }
+  50% {
+    box-shadow: 
+      0 0 10px rgba(var(--color-primary), 0.4),
+      0 0 20px rgba(var(--color-primary), 0.3),
+      0 0 30px rgba(var(--color-primary), 0.2);
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* 动态外发光扩散 */
+@keyframes dynamicGlow {
+  0% {
+    box-shadow: 
+      0 0 0px rgba(var(--color-primary), 0),
+      0 0 0px rgba(var(--color-primary), 0);
+  }
+  50% {
+    box-shadow: 
+      0 0 20px rgba(var(--color-primary), 0.3),
+      0 0 40px rgba(var(--color-primary), 0.1);
+  }
+  100% {
+    box-shadow: 
+      0 0 15px rgba(var(--color-primary), 0.2),
+      0 0 30px rgba(var(--color-primary), 0.05);
+  }
+}
+
+.dynamic-glow {
+  animation: dynamicGlow 2s ease-in-out infinite;
+}
+
+/* 悬停时的外发光增强 */
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 
+    0 0 20px rgba(var(--color-primary), 0.4),
+    0 0 40px rgba(var(--color-primary), 0.2),
+    0 0 60px rgba(var(--color-primary), 0.1);
+  filter: drop-shadow(0 0 10px rgba(var(--color-primary), 0.3));
+}
+
+/* 多层外发光效果 */
+.multi-glow {
+  position: relative;
+}
+
+.multi-glow::before {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  background: inherit;
+  border-radius: inherit;
+  opacity: 0;
+  filter: blur(20px);
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.multi-glow:hover::before {
+  opacity: 0.3;
+}
+
+.multi-glow::after {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: inherit;
+  border-radius: inherit;
+  opacity: 0;
+  filter: blur(40px);
+  transition: opacity 0.5s ease;
+  z-index: -2;
+}
+
+.multi-glow:hover::after {
+  opacity: 0.2;
+}
+
+/* 呼吸外发光效果 */
+@keyframes breatheGlow {
+  0%, 100% {
+    box-shadow: 
+      0 0 5px rgba(var(--color-primary), 0.1),
+      0 0 10px rgba(var(--color-primary), 0.05);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 
+      0 0 15px rgba(var(--color-primary), 0.3),
+      0 0 25px rgba(var(--color-primary), 0.15);
+    transform: scale(1.02);
+  }
+}
+
+.breathe-glow {
+  animation: breatheGlow 4s ease-in-out infinite;
+}
+
+/* 彩虹外发光效果 */
+@keyframes rainbowGlow {
+  0% {
+    box-shadow: 0 0 20px rgba(var(--color-primary), 0.4);
+  }
+  25% {
+    box-shadow: 0 0 20px rgba(var(--color-secondary), 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(var(--color-accent), 0.4);
+  }
+  75% {
+    box-shadow: 0 0 20px rgba(var(--color-info), 0.4);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(var(--color-primary), 0.4);
+  }
+}
+
+.rainbow-glow {
+  animation: rainbowGlow 6s linear infinite;
+}
