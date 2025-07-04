@@ -80,6 +80,9 @@ export default function Footer({ dict }: FooterProps) {
                 <p className="text-sm text-base-content/60">
                   {dict.footer.copyright}
                 </p>
+                <p className="text-sm text-base-content/60">
+                  苏ICP备2025170597号
+                </p>
                 {/* <div className="flex space-x-6 text-sm">
                   <a href="#" className="text-base-content/60 hover:text-primary transition-colors duration-200">
                     {dict.footer.privacy}
