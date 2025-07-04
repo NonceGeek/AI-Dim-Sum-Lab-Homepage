@@ -1,32 +1,37 @@
 import { BookOpen, ShoppingCart, Search, Cloud, Globe } from 'lucide-react';
 import { FadeInUp, StaggeredList, StaggeredItem } from './ScrollReveal';
 import AnimatedText from './AnimatedText';
+import { type Dictionary } from '../i18n/types';
 
-export default function Features() {
+interface FeaturesProps {
+  dict: Dictionary;
+}
+
+export default function Features({ dict }: FeaturesProps) {
   const features = [
     {
-      title: "Corpus Development",
-      description: "How to develop annotation standards to efficiently build a large-scale Autonomous Multimodal Cantonese Corpus?",
+      title: dict.features.items.corpus.title,
+      description: dict.features.items.corpus.description,
       icon: BookOpen
     },
     {
-      title: "Application Ecosystem",
-      description: "How to design an access mechanism to create the Yue App Store and a versatile Cantonese application ecosystem based on the Cantonese corpus?",
+      title: dict.features.items.ecosystem.title,
+      description: dict.features.items.ecosystem.description,
       icon: ShoppingCart
     },
     {
-      title: "Search Engine Innovation",
-      description: "How to improve search algorithms to develop a next-generation AI-friendly search engine based on the Cantonese corpus?",
+      title: dict.features.items.search.title,
+      description: dict.features.items.search.description,
       icon: Search
     },
     {
-      title: "AI SaaS Framework",
-      description: "How to innovate service models to create a next-generation AI SaaS framework based on the Cantonese corpus?",
+      title: dict.features.items.saas.title,
+      description: dict.features.items.saas.description,
       icon: Cloud
     },
     {
-      title: "Community Building",
-      description: "How to foster an open-source community to build a next-generation global community of builders and researchers (DAO for Builders & Researchers) around the Cantonese corpus?",
+      title: dict.features.items.community.title,
+      description: dict.features.items.community.description,
       icon: Globe
     }
   ];
@@ -88,13 +93,13 @@ export default function Features() {
       <FadeInUp>
         <div className="text-left mb-12 sm:mb-16">
           <AnimatedText 
-            text="Critical Propositions"
+            text={dict.features.title}
             as="h2"
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold gradient-text-flow mb-4 sm:mb-6 tech-heading"
             delay={0.2}
           />
           <p className="text-lg sm:text-xl text-base-content/80 max-w-4xl tech-text leading-relaxed">
-            Dim Sum AI Lab is deeply dedicated to exploring a series of critical propositions.
+            {dict.features.subtitle}
           </p>
         </div>
       </FadeInUp>

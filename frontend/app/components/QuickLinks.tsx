@@ -1,29 +1,37 @@
 import { Database, ShoppingCart, Code, ExternalLink } from 'lucide-react';
 import { StaggeredList, StaggeredItem } from './ScrollReveal';
 import AnimatedText from './AnimatedText';
+import { type Dictionary } from '../i18n/types';
 
-export default function QuickLinks() {
+interface QuickLinksProps {
+  dict: Dictionary;
+}
+
+export default function QuickLinks({ dict }: QuickLinksProps) {
   const links = [
     {
-      title: "Cantonese Data",
-      description: "Access our comprehensive Cantonese corpus with advanced data processing capabilities",
+      title: dict.quickLinks.items.data.title,
+      description: dict.quickLinks.items.data.description,
       icon: Database,
       color: "primary",
-      href: "https://search.aidimsum.com/library"
+      href: "https://search.aidimsum.com/library",
+      button: dict.quickLinks.items.data.button
     },
     {
-      title: "App Store",
-      description: "Explore a diverse ecosystem of Cantonese applications built on our corpus",
+      title: dict.quickLinks.items.store.title,
+      description: dict.quickLinks.items.store.description,
       icon: ShoppingCart,
       color: "secondary",
-      href: "https://search.aidimsum.com/appStore"
+      href: "https://search.aidimsum.com/appStore",
+      button: dict.quickLinks.items.store.button
     },
     {
-      title: "APIs",
-      description: "Integrate Cantonese AI capabilities into your applications with our comprehensive API suite",
+      title: dict.quickLinks.items.apis.title,
+      description: dict.quickLinks.items.apis.description,
       icon: Code,
       color: "accent",
-      href: "https://search.aidimsum.com/docs"
+      href: "https://search.aidimsum.com/docs",
+      button: dict.quickLinks.items.apis.button
     }
   ];
 
@@ -55,13 +63,13 @@ export default function QuickLinks() {
       {/* 标题部分 - 移动端间距和字体调整 */}
       <div className="text-center mb-12 sm:mb-14 md:mb-16">
         <AnimatedText 
-          text="Quick Access"
+          text={dict.quickLinks.title}
           as="h2"
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold gradient-text-flow mb-3 sm:mb-4 tech-heading"
           delay={0.2}
         />
         <p className="text-base sm:text-lg md:text-xl text-base-content/80 max-w-3xl mx-auto tech-text leading-relaxed px-4">
-          Direct access to our core Cantonese AI resources and services
+          {dict.quickLinks.subtitle}
         </p>
       </div>
       
@@ -109,7 +117,7 @@ export default function QuickLinks() {
                           rel="noopener noreferrer"
                           className={`group/btn relative inline-flex items-center gap-2 px-4 sm:px-5 md:px-6 py-2.5 sm:py-3 rounded-lg sm:rounded-xl bg-${link.color} text-white text-sm sm:text-base font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-${link.color}/30 overflow-hidden`}
                         >
-                          <span>Learn More</span>
+                          <span>{link.button}</span>
                           <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform duration-300" />
                           
                           {/* 按钮光效 */}

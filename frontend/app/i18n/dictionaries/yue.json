@@ -1,0 +1,124 @@
+{
+  "navigation": {
+    "home": "首頁",
+    "whyWeAreHere": "我哋點解喺度",
+    "features": "核心命題",
+    "architecture": "系統架構",
+    "quickLinks": "快速訪問",
+    "projectBoard": "項目看板"
+  },
+  "hero": {
+    "title": "DIMSUM AI 實驗室",
+    "subtitle": "培育兼容AI嘅粵語語料庫",
+    "description": "通過先進嘅自然語言處理同全面嘅語料庫開發，連接全球粵語AI生態系統。",
+    "getStarted": "開始探索",
+    "scrollIndicator": "滾動探索"
+  },
+  "whyWeAreHere": {
+    "title": "我哋點解喺度",
+    "description": "作為最具活力同特色嘅漢語方言，粵語唔單止係交流工具，更加係嶺南文化嘅精神載體同活態文化遺產。全球有超過",
+    "speakers": "8500萬人使用",
+    "period": "。"
+  },
+  "features": {
+    "title": "核心命題",
+    "subtitle": "Dim Sum AI 實驗室致力於探索一系列關鍵命題。",
+    "items": {
+      "corpus": {
+        "title": "語料庫開發",
+        "description": "點樣制定標註標準，高效構建大規模自主多模態粵語語料庫？"
+      },
+      "ecosystem": {
+        "title": "應用生態系統",
+        "description": "點樣設計訪問機制，基於粵語語料庫創建粵語應用商店同多元化粵語應用生態系統？"
+      },
+      "search": {
+        "title": "搜索引擎創新",
+        "description": "點樣改進搜索算法，基於粵語語料庫開發下一代AI友好嘅搜索引擎？"
+      },
+      "saas": {
+        "title": "AI SaaS框架",
+        "description": "點樣創新服務模式，基於粵語語料庫創建下一代AI SaaS框架？"
+      },
+      "community": {
+        "title": "社區建設",
+        "description": "點樣培育開源社區，圍繞粵語語料庫建設下一代全球建設者同研究者社區（建設者與研究者DAO）？"
+      }
+    }
+  },
+  "architecture": {
+    "title": "系統架構",
+    "subtitle": "專為可擴展粵語AI開發設計嘅四層綜合架構",
+    "layers": {
+      "application": {
+        "name": "應用層",
+        "subtitle": "面向用戶嘅解決方案",
+        "description": "終端用戶應用同智能代理",
+        "items": ["粵語AI代理", "粵語應用", "粵語工具"]
+      },
+      "api": {
+        "name": "API網關",
+        "subtitle": "集成接口",
+        "description": "開發者嘅標準化接口",
+        "items": ["REST APIs", "GraphQL APIs", "WebSocket APIs"]
+      },
+      "core": {
+        "name": "核心服務",
+        "subtitle": "AI基礎設施",
+        "description": "核心AI同服務基礎設施",
+        "items": ["AI搜索引擎", "AI SaaS框架", "應用擴展", "大語言模型"]
+      },
+      "data": {
+        "name": "數據基礎",
+        "subtitle": "知識庫",
+        "description": "數據基礎同標註基礎設施",
+        "items": ["多模態數據倉庫", "混合標註系統"]
+      }
+    }
+  },
+  "quickLinks": {
+    "title": "快速訪問",
+    "subtitle": "直接訪問我哋嘅核心粵語AI資源同服務",
+    "items": {
+      "data": {
+        "title": "粵語數據",
+        "description": "訪問我哋具有高級數據處理功能嘅綜合粵語語料庫",
+        "button": "了解更多"
+      },
+      "store": {
+        "title": "應用商店",
+        "description": "探索基於我哋語料庫構建嘅多元化粵語應用生態系統",
+        "button": "了解更多"
+      },
+      "apis": {
+        "title": "API接口",
+        "description": "通過我哋全面嘅API套件將粵語AI功能集成到你嘅應用中",
+        "button": "了解更多"
+      }
+    }
+  },
+  "footer": {
+    "company": "DIMSUM AI 實驗室",
+    "description": "推進人工智能喺自然語言處理領域嘅研究同發展，專注於中國方言研究同計算語言學。",
+    "partners": "合作夥伴",
+    "copyright": "© 2025 DIMSUM AI 實驗室。保留所有權利。",
+    "privacy": "隱私政策",
+    "terms": "服務條款",
+    "cookies": "Cookie 政策",
+    "wechat": {
+      "title": "媒體",
+      "description": "關注我哋嘅微信公眾號，獲取最新資訊同更新。",
+      "button": "微信公眾號",
+      "modal": {
+        "title": "AI Dim Sum Lab 公眾號",
+        "description": "掃碼關注，獲取最新資訊"
+      }
+    }
+  },
+  "language": {
+    "switch": "語言",
+    "en": "English",
+    "zh": "中文",
+    "yue": "粵語"
+  }
+} 

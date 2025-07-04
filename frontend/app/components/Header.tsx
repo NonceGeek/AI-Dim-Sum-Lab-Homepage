@@ -3,21 +3,29 @@ import { Menu } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import SmoothScroll from './SmoothScroll';
+import LanguageSwitcher from './LanguageSwitcher';
+import { type Locale } from '../i18n/config';
+import { type Dictionary } from '../i18n/types';
 
-export default function Header() {
+interface HeaderProps {
+  locale: Locale;
+  dict: Dictionary;
+}
+
+export default function Header({ locale, dict }: HeaderProps) {
   const pathname = usePathname();
-  const isHomePage = pathname === '/';
+  const isHomePage = pathname.includes('/' + locale) && !pathname.includes('/board');
 
   const navItems = [
-    { label: 'Home', id: 'hero', href: '/' },
-    { label: 'Why We Are Here', id: 'why-we-are-here', href: '/' },
-    { label: 'Features', id: 'features', href: '/' },
-    { label: 'Architecture', id: 'architecture', href: '/' },
-    { label: 'Quick Links', id: 'quick-links', href: '/' }
+    { label: dict.navigation.home, id: 'hero', href: '/' },
+    { label: dict.navigation.whyWeAreHere, id: 'why-we-are-here', href: '/' },
+    { label: dict.navigation.features, id: 'features', href: '/' },
+    { label: dict.navigation.architecture, id: 'architecture', href: '/' },
+    { label: dict.navigation.quickLinks, id: 'quick-links', href: '/' }
   ];
 
   const externalNavItems = [
-    { label: 'Project Board', href: '/board' },
+    { label: dict.navigation.projectBoard, href: '/board' },
   ];
 
   const renderNavItem = (item: { label: string; id?: string; href: string }) => {
@@ -126,10 +134,14 @@ export default function Header() {
                 </li>
               ))}
             </ul>
+            
+            {/* 语言切换器 */}
+            <LanguageSwitcher currentLocale={locale} />
           </div>
           
-          <div className="lg:hidden">
-            {/* 移动端占位 */}
+          <div className="lg:hidden flex items-center space-x-2">
+            {/* 移动端语言切换器 */}
+            <LanguageSwitcher currentLocale={locale} />
           </div>
         </div>
       </div>

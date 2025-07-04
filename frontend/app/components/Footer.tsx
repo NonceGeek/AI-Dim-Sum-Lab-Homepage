@@ -1,8 +1,13 @@
 import { Github } from 'lucide-react';
 import { FadeInUp, FadeInLeft, FadeInRight } from './ScrollReveal';
 import WeChatQRCodeModal from './WeChatQRCodeModal';
+import { type Dictionary } from '../i18n/types';
 
-export default function Footer() {
+interface FooterProps {
+  dict: Dictionary;
+}
+
+export default function Footer({ dict }: FooterProps) {
   const partners = [
     "NoncegeekDAO",
     "Center for Chinese Dialect Studies, Jinan University",
@@ -25,11 +30,10 @@ export default function Footer() {
               <div className="space-y-4">
                 <div className="flex items-center space-x-2">
                   <img src="/logo.png" alt="DimSum Logo" className="w-8 h-8 rounded-lg" />
-                  <h3 className="text-xl font-bold text-primary">DIMSUN AI Labs</h3>
+                  <h3 className="text-xl font-bold text-primary">{dict.footer.company}</h3>
             </div>
                 <p className="text-sm text-base-content/80 leading-relaxed">
-                  Advancing AI research and development in natural language processing, 
-                  with a focus on Chinese dialect studies and computational linguistics.
+                  {dict.footer.description}
                 </p>
                 <div className="flex space-x-4">
                   <a
@@ -47,13 +51,13 @@ export default function Footer() {
 
             {/* Media (WeChat Public Account) */}
             <FadeInUp delay={0.3}>
-              <WeChatQRCodeModal />
+              <WeChatQRCodeModal dict={dict} />
             </FadeInUp>
 
             {/* Partners */}
             <FadeInRight delay={0.4}>
               <div className="space-y-4">
-                <h4 className="text-lg font-semibold text-primary">Partners</h4>
+                <h4 className="text-lg font-semibold text-primary">{dict.footer.partners}</h4>
                 <div className="space-y-2">
                   {partners.map((partner, index) => (
                     <p 
@@ -74,17 +78,17 @@ export default function Footer() {
           <div className="container mx-auto px-6 py-6">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                 <p className="text-sm text-base-content/60">
-                  © 2025 DIMSUM AI Labs. All rights reserved.
+                  {dict.footer.copyright}
                 </p>
                 {/* <div className="flex space-x-6 text-sm">
                   <a href="#" className="text-base-content/60 hover:text-primary transition-colors duration-200">
-                    Privacy Policy
+                    {dict.footer.privacy}
                   </a>
                   <a href="#" className="text-base-content/60 hover:text-primary transition-colors duration-200">
-                    Terms of Service
+                    {dict.footer.terms}
                   </a>
                   <a href="#" className="text-base-content/60 hover:text-primary transition-colors duration-200">
-                    Cookie Policy
+                    {dict.footer.cookies}
                   </a>
                 </div> */}
             </div>

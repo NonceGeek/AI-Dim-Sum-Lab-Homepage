@@ -1,8 +1,13 @@
 import { FadeInUp, FadeInLeft, FadeInRight } from './ScrollReveal';
 import LogoFloat from './LogoFloat';
 import AnimatedText from './AnimatedText';
+import { type Dictionary } from '../i18n/types';
 
-export default function WhyWeAreHere() {
+interface WhyWeAreHereProps {
+  dict: Dictionary;
+}
+
+export default function WhyWeAreHere({ dict }: WhyWeAreHereProps) {
   return (
     <FadeInUp>
       <section id="why-we-are-here" className="relative overflow-hidden w-full mx-auto min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] flex items-center justify-center pb-20 sm:pb-28 md:pb-36 lg:pb-40 px-4 sm:px-6 md:px-8">
@@ -29,7 +34,7 @@ export default function WhyWeAreHere() {
             <div className="flex-1 text-center md:text-left flex flex-col justify-center">
               {/* 标题 - 移动端字体大小调整 */}
               <AnimatedText 
-                text="Why We Are Here"
+                text={dict.whyWeAreHere.title}
                 as="h2"
                 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-3 sm:mb-4 font-extrabold tech-heading tracking-tight leading-tight gradient-text-flow"
                 delay={0.3}
@@ -37,9 +42,9 @@ export default function WhyWeAreHere() {
               
               {/* 描述文本 - 移动端行高和字体大小优化 */}
               <p className="text-base sm:text-lg md:text-xl text-base-content/90 leading-relaxed tech-text mb-4 sm:mb-5 max-w-2xl mx-auto md:mx-0">
-                As the most dynamic and distinctive Chinese dialect, Cantonese is not only a communication tool, 
-                but also the spiritual carrier and living cultural heritage of Lingnan culture. It is used by over 
-                <span className="font-bold"> 85 million people worldwide</span>.
+                {dict.whyWeAreHere.description}
+                <span className="font-bold"> {dict.whyWeAreHere.speakers}</span>
+                {dict.whyWeAreHere.period}
               </p>
               
               {/* 统计数据区域 - 移动端布局优化 */}

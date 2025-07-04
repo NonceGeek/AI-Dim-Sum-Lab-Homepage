@@ -3,7 +3,10 @@
 import { useEffect, useState } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
-import Header from '../components/Header';
+import Header from '../../components/Header';
+import { getDictionary } from '../../i18n/getDictionary';
+import { type Locale } from '../../i18n/config';
+import { type Dictionary } from '../../i18n/types';
 
 const API_URL = "https://ai-dimsum-lab-homepage.deno.dev/api/kanban";
 
@@ -27,7 +30,20 @@ interface KanbanColumn {
   items: KanbanItem[];
 }
 
-export default function Kanban() {
+interface PageProps {
+  params: Promise<{
+    locale: Locale;
+  }>;
+}
+
+export default async function Kanban({ params }: PageProps) {
+  const { locale } = await params;
+  const dict = await getDictionary(locale);
+
+  return <KanbanClient locale={locale} dict={dict} />;
+}
+
+function KanbanClient({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const [columns, setColumns] = useState<KanbanColumn[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -134,12 +150,12 @@ export default function Kanban() {
 
   return (
     <div className="min-h-screen bg-base-100">
-      <Header />
+      <Header locale={locale} dict={dict} />
       
       <div className="container mx-auto px-4 py-8">
         {/* Back to Home */}
         <div className="mb-6">
-          <Link href="/" className="btn btn-ghost btn-sm">
+          <Link href={`/${locale}`} className="btn btn-ghost btn-sm">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Home
           </Link>

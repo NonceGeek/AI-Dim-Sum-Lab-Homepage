@@ -1,13 +1,24 @@
-import Header from './components/Header';
-import Hero from './components/Hero';
-import WhyWeAreHere from './components/WhyWeAreHere';
-import Features from './components/Features';
-import Architecture from './components/Architecture';
-import QuickLinks from './components/QuickLinks';
-import Footer from './components/Footer';
-import ScrollProgress from './components/ScrollProgress';
+import { getDictionary } from '../i18n/getDictionary';
+import { type Locale } from '../i18n/config';
+import Header from '../components/Header';
+import Hero from '../components/Hero';
+import WhyWeAreHere from '../components/WhyWeAreHere';
+import Features from '../components/Features';
+import Architecture from '../components/Architecture';
+import QuickLinks from '../components/QuickLinks';
+import Footer from '../components/Footer';
+import ScrollProgress from '../components/ScrollProgress';
 
-export default function Home() {
+interface PageProps {
+  params: Promise<{
+    locale: Locale;
+  }>;
+}
+
+export default async function Home({ params }: PageProps) {
+  const { locale } = await params;
+  const dict = await getDictionary(locale);
+
   return (
     <div className="min-h-screen bg-base-100 relative overflow-hidden">
       {/* 全局背景装饰 - 只在Hero区域可见的光源效果 */}
@@ -54,21 +65,21 @@ export default function Home() {
       </div>
 
       <ScrollProgress />
-      <Header />
+      <Header locale={locale} dict={dict} />
       
       <div className="container mx-auto py-8 pt-24 lg:pt-28">
-        <Hero />
+        <Hero dict={dict} />
 
-        <WhyWeAreHere />
+        <WhyWeAreHere dict={dict} />
 
-        <Features />
+        <Features dict={dict} />
 
-        <Architecture />
+        <Architecture dict={dict} />
 
-        <QuickLinks />
+        <QuickLinks dict={dict} />
 
-        <Footer />
+        <Footer dict={dict} />
       </div>
     </div>
   );
-}
+} 

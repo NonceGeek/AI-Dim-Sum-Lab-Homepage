@@ -1,43 +1,48 @@
 import { Bot, Database, Cpu, Network, ArrowRight } from 'lucide-react';
 import { FadeInUp, StaggeredList, StaggeredItem } from './ScrollReveal';
 import AnimatedText from './AnimatedText';
+import { type Dictionary } from '../i18n/types';
 
-export default function Architecture() {
+interface ArchitectureProps {
+  dict: Dictionary;
+}
+
+export default function Architecture({ dict }: ArchitectureProps) {
   const layers = [
     {
-      name: "Application Layer",
-      subtitle: "User-Facing Solutions",
-      items: ["Cantonese AI Agents", "Cantonese Apps", "Cantonese Tools"],
+      name: dict.architecture.layers.application.name,
+      subtitle: dict.architecture.layers.application.subtitle,
+      items: dict.architecture.layers.application.items,
       color: "primary",
       icon: Bot,
-      description: "End-user applications and intelligent agents",
+      description: dict.architecture.layers.application.description,
       level: "L4"
     },
     {
-      name: "API Gateway",
-      subtitle: "Integration Interfaces",
-      items: ["REST APIs", "GraphQL APIs", "WebSocket APIs"],
+      name: dict.architecture.layers.api.name,
+      subtitle: dict.architecture.layers.api.subtitle,
+      items: dict.architecture.layers.api.items,
       color: "secondary",
       icon: Network,
-      description: "Standardized interfaces for developers",
+      description: dict.architecture.layers.api.description,
       level: "L3"
     },
     {
-      name: "Core Services",
-      subtitle: "AI Infrastructure",
-      items: ["AI Search Engines", "AI SaaS Framework", "App Extension", "LLMs"],
+      name: dict.architecture.layers.core.name,
+      subtitle: dict.architecture.layers.core.subtitle,
+      items: dict.architecture.layers.core.items,
       color: "accent",
       icon: Cpu,
-      description: "Core AI and service infrastructure",
+      description: dict.architecture.layers.core.description,
       level: "L2"
     },
     {
-      name: "Data Foundation",
-      subtitle: "Knowledge Base",
-      items: ["Multimodal Data Repository", "Hybrid Annotation System"],
+      name: dict.architecture.layers.data.name,
+      subtitle: dict.architecture.layers.data.subtitle,
+      items: dict.architecture.layers.data.items,
       color: "info",
       icon: Database,
-      description: "Data foundation and annotation infrastructure",
+      description: dict.architecture.layers.data.description,
       level: "L1"
     }
   ];
@@ -113,13 +118,13 @@ export default function Architecture() {
       <FadeInUp>
         <div className="text-center mb-8 sm:mb-10 md:mb-12">
           <AnimatedText 
-            text="System Architecture"
+            text={dict.architecture.title}
             as="h2"
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold gradient-text-flow mb-3 sm:mb-4 tech-heading"
             delay={0.2}
           />
           <p className="text-base sm:text-lg md:text-xl text-base-content/80 max-w-3xl mx-auto tech-text leading-relaxed px-4">
-            A comprehensive four-layer architecture designed for scalable Cantonese AI development
+            {dict.architecture.subtitle}
           </p>
         </div>
       </FadeInUp>
@@ -173,7 +178,7 @@ export default function Architecture() {
                         
                         {/* 层级组件 - 移动端网格布局 */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-wrap gap-2 sm:gap-3">
-                          {layer.items.map((item, itemIndex) => {
+                          {layer.items.map((item: string, itemIndex: number) => {
                             // 根据颜色设置对应的背景和边框类名
                             const getItemClasses = (color: string) => {
                               const itemColorMap = {

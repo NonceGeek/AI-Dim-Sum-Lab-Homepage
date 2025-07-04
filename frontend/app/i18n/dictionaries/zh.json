@@ -1,0 +1,124 @@
+{
+  "navigation": {
+    "home": "首页",
+    "whyWeAreHere": "我们为何在此",
+    "features": "核心命题",
+    "architecture": "系统架构",
+    "quickLinks": "快速访问",
+    "projectBoard": "项目看板"
+  },
+  "hero": {
+    "title": "DIMSUM AI 实验室",
+    "subtitle": "培育兼容AI的粤语语料库",
+    "description": "通过先进的自然语言处理和全面的语料库开发，连接全球粤语AI生态系统。",
+    "getStarted": "开始探索",
+    "scrollIndicator": "滚动探索"
+  },
+  "whyWeAreHere": {
+    "title": "我们为何在此",
+    "description": "作为最具活力和特色的汉语方言，粤语不仅是交流工具，更是岭南文化的精神载体和活态文化遗产。全球有超过",
+    "speakers": "8500万人使用",
+    "period": "。"
+  },
+  "features": {
+    "title": "核心命题",
+    "subtitle": "Dim Sum AI 实验室致力于探索一系列关键命题。",
+    "items": {
+      "corpus": {
+        "title": "语料库开发",
+        "description": "如何制定标注标准，高效构建大规模自主多模态粤语语料库？"
+      },
+      "ecosystem": {
+        "title": "应用生态系统",
+        "description": "如何设计访问机制，基于粤语语料库创建粤语应用商店和多元化粤语应用生态系统？"
+      },
+      "search": {
+        "title": "搜索引擎创新",
+        "description": "如何改进搜索算法，基于粤语语料库开发下一代AI友好的搜索引擎？"
+      },
+      "saas": {
+        "title": "AI SaaS框架",
+        "description": "如何创新服务模式，基于粤语语料库创建下一代AI SaaS框架？"
+      },
+      "community": {
+        "title": "社区建设",
+        "description": "如何培育开源社区，围绕粤语语料库建设下一代全球建设者和研究者社区（建设者与研究者DAO）？"
+      }
+    }
+  },
+  "architecture": {
+    "title": "系统架构",
+    "subtitle": "专为可扩展粤语AI开发设计的四层综合架构",
+    "layers": {
+      "application": {
+        "name": "应用层",
+        "subtitle": "面向用户的解决方案",
+        "description": "终端用户应用和智能代理",
+        "items": ["粤语AI代理", "粤语应用", "粤语工具"]
+      },
+      "api": {
+        "name": "API网关",
+        "subtitle": "集成接口",
+        "description": "开发者的标准化接口",
+        "items": ["REST APIs", "GraphQL APIs", "WebSocket APIs"]
+      },
+      "core": {
+        "name": "核心服务",
+        "subtitle": "AI基础设施",
+        "description": "核心AI和服务基础设施",
+        "items": ["AI搜索引擎", "AI SaaS框架", "应用扩展", "大语言模型"]
+      },
+      "data": {
+        "name": "数据基础",
+        "subtitle": "知识库",
+        "description": "数据基础和标注基础设施",
+        "items": ["多模态数据仓库", "混合标注系统"]
+      }
+    }
+  },
+  "quickLinks": {
+    "title": "快速访问",
+    "subtitle": "直接访问我们的核心粤语AI资源和服务",
+    "items": {
+      "data": {
+        "title": "粤语数据",
+        "description": "访问我们具有高级数据处理功能的综合粤语语料库",
+        "button": "了解更多"
+      },
+      "store": {
+        "title": "应用商店",
+        "description": "探索基于我们语料库构建的多元化粤语应用生态系统",
+        "button": "了解更多"
+      },
+      "apis": {
+        "title": "API接口",
+        "description": "通过我们全面的API套件将粤语AI功能集成到您的应用中",
+        "button": "了解更多"
+      }
+    }
+  },
+  "footer": {
+    "company": "DIMSUM AI 实验室",
+    "description": "推进人工智能在自然语言处理领域的研究与发展，专注于中国方言研究和计算语言学。",
+    "partners": "合作伙伴",
+    "copyright": "© 2025 DIMSUM AI 实验室。保留所有权利。",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "cookies": "Cookie 政策",
+    "wechat": {
+      "title": "媒体",
+      "description": "关注我们的微信公众号，获取最新资讯和更新。",
+      "button": "微信公众号",
+      "modal": {
+        "title": "AI Dim Sum Lab 公众号",
+        "description": "扫码关注，获取最新资讯"
+      }
+    }
+  },
+  "language": {
+    "switch": "语言",
+    "en": "English",
+    "zh": "中文",
+    "yue": "粵語"
+  }
+} 
