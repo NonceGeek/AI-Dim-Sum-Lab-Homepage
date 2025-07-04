@@ -56,20 +56,18 @@ export default function Home() {
       <ScrollProgress />
       <Header />
       
-      <div className="relative z-10">
-        <div className="container mx-auto py-8">
-          <Hero />
+      <div className="container mx-auto py-8 pt-24 lg:pt-28">
+        <Hero />
 
-          <WhyWeAreHere />
+        <WhyWeAreHere />
 
-          <Features />
+        <Features />
 
-          <Architecture />
+        <Architecture />
 
-          <QuickLinks />
+        <QuickLinks />
 
-          <Footer />
-        </div>
+        <Footer />
       </div>
     </div>
   );

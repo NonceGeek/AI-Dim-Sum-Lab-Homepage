@@ -39,15 +39,12 @@ export default function WhyWeAreHere() {
               <p className="text-base sm:text-lg md:text-xl text-base-content/90 leading-relaxed tech-text mb-4 sm:mb-5 max-w-2xl mx-auto md:mx-0">
                 As the most dynamic and distinctive Chinese dialect, Cantonese is not only a communication tool, 
                 but also the spiritual carrier and living cultural heritage of Lingnan culture. It is used by over 
-                <span className="font-bold">85 million people worldwide</span>.
+                <span className="font-bold"> 85 million people worldwide</span>.
               </p>
               
               {/* 统计数据区域 - 移动端布局优化 */}
               <div className="flex flex-col items-center md:items-start gap-2 mt-1">
-                <div className="divider divider-neutral w-16 sm:w-20 my-0"></div>
                 <div className="flex flex-col sm:flex-row items-center sm:items-end gap-2 sm:gap-3 animate-fade-in-up animate-delay-400">
-                  <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-extrabold text-primary/80">85M+</span>
-                  <span className="text-base-content/60 text-sm sm:text-base md:text-lg font-medium pb-0 sm:pb-1 text-center sm:text-left">Cantonese Speakers</span>
                 </div>
               </div>
             </div>

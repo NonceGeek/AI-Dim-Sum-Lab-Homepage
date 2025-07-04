@@ -16,7 +16,7 @@ export default function Footer() {
 
   return (
     <FadeInUp>
-      <footer className="bg-base-200 text-base-content">
+      <footer className="bg-transparent text-base-content">
         {/* Main Footer Content */}
         <div className="container mx-auto px-6 py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -73,13 +73,10 @@ export default function Footer() {
         <div className="border-t border-base-300">
           <div className="container mx-auto px-6 py-6">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <FadeInUp delay={0.6}>
                 <p className="text-sm text-base-content/60">
-                  © 2024 AI Dim Sum Lab. All rights reserved.
+                  © 2025 DIMSUM AI Labs. All rights reserved.
                 </p>
-              </FadeInUp>
-              <FadeInUp delay={0.7}>
-                <div className="flex space-x-6 text-sm">
+                {/* <div className="flex space-x-6 text-sm">
                   <a href="#" className="text-base-content/60 hover:text-primary transition-colors duration-200">
                     Privacy Policy
                   </a>
@@ -89,8 +86,7 @@ export default function Footer() {
                   <a href="#" className="text-base-content/60 hover:text-primary transition-colors duration-200">
                     Cookie Policy
                   </a>
-                </div>
-              </FadeInUp>
+                </div> */}
             </div>
           </div>
         </div>

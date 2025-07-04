@@ -99,6 +99,16 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Sticky Header 支持 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 防止内容被 sticky header 遮挡 */
+body {
+  scroll-padding-top: 80px; /* 根据 header 高度调整 */
+}
+
 /* 科技感字体效果 */
 .tech-text {
   font-family: var(--font-sans);
