@@ -11,6 +11,8 @@ export interface Dictionary {
     title: string;
     subtitle: string;
     description: string;
+    description_2: string;
+    description_3: string;
     getStarted: string;
     scrollIndicator: string;
   };

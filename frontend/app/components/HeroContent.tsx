@@ -13,7 +13,7 @@ export default function HeroContent({ dict }: HeroContentProps) {
     <div className="hero-content text-left w-full max-w-none p-8 lg:p-12 relative z-10">
       <div className="w-full">
         {/* 左下角内容区域 */}
-        <div className="max-w-4xl">
+        <div className="max-w-7xl">
           {/* 第一行：DIMSUM AI 渐变文字 */}
           <FadeInUp delay={0.1}>
             <h1 className="text-6xl lg:text-8xl font-black tech-heading mb-2 leading-tight">
@@ -25,15 +25,41 @@ export default function HeroContent({ dict }: HeroContentProps) {
 
           {/* 第二行：副标题 */}
           <FadeInUp delay={0.3}>
-            <h2 className="text-5xl lg:text-7xl font-bold text-base-content mb-6 leading-tight">
+            <h2 className="text-xl lg:text-3xl font-bold text-base-content mb-6 leading-tight">
               {dict.hero.subtitle}
             </h2>
           </FadeInUp>
           
           {/* 第三行：描述 */}
           <FadeInUp delay={0.5}>
-            <p className="text-xl lg:text-2xl text-base-content/80 mb-8 leading-relaxed tech-text max-w-2xl">
-              {dict.hero.description}
+            <p className="text-lg lg:text-xl text-base-content/80 mb-8 leading-loose tech-text max-w-4xl">
+              {dict.hero.description.split('\n').map((line, index) => (
+                <span key={index}>
+                  {line.split(/(\*\*.*?\*\*)/).map((part, partIndex) => {
+                    if (part.startsWith('**') && part.endsWith('**')) {
+                      return <strong key={partIndex}>{part.slice(2, -2)}</strong>;
+                    }
+                    return part;
+                  })}
+                  {index < dict.hero.description.split('\n').length - 1 && <br />}
+                </span>
+              ))}
+            </p>
+          </FadeInUp>
+
+          <FadeInUp delay={0.5}>
+            <p className="text-lg lg:text-xl text-base-content/80 mb-8 leading-loose tech-text max-w-4xl">
+              {dict.hero.description_3.split('\n').map((line, index) => (
+                <span key={index}>
+                  {line.split(/(\*\*.*?\*\*)/).map((part, partIndex) => {
+                    if (part.startsWith('**') && part.endsWith('**')) {
+                      return <strong className="hero-gradient-text" key={partIndex}>{part.slice(2, -2)}</strong>;
+                    }
+                    return part;
+                  })}
+                  {index < dict.hero.description_3.split('\n').length - 1 && <br />}
+                </span>
+              ))}
             </p>
           </FadeInUp>
 

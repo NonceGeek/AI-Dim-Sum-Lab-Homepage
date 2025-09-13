@@ -1,22 +1,25 @@
 {
   "navigation": {
     "home": "首页",
-    "whyWeAreHere": "我们为何在此",
-    "features": "核心命题",
-    "architecture": "系统架构",
-    "quickLinks": "快速访问",
-    "projectBoard": "项目看板"
+    "whyWeAreHere": "语料搜索引擎",
+    "features": "语料图书馆",
+    "architecture": "应用商店",
+    "quickLinks": "文档",
+    "projectBoard": "讨论区"
   },
   "hero": {
     "title": "DIMSUM AI 实验室",
-    "subtitle": "培育兼容AI的粤语语料库",
-    "description": "通过先进的自然语言处理和全面的语料库开发，连接全球粤语AI生态系统。",
-    "getStarted": "开始探索",
+    "subtitle": "AI 友好的粤语语料库系统 & 服务真实环境的 AI Agent 系统",
+    "description": "兼容岭南文化，兼容 AI 科技，\n构建「粤语数据集 — 大语言模型 — AI Agent — 创新应用」为一体的完整体系。",
+    "description_4": "在 AI 叙事的时代背景下，将分散在不同机构与个人下的粤语数据进行归集，从而构建「粤语数据集 — 大语言模型 — AI Agent — 创新应用」为一体的完整体系。",
+    "description_2": "四大特性：\n* **AI 友好** — 具备和大模型与小模型对接的接口\n* **AI Agent 友好** — 具备和 AI Agents 对接的接口\n* **模块热插拔** — 系统可以动态加入新的能力，例如接入「区块链确权模块」\n* **社区模式** — 坚持核心团队与技术社区共建的模式，共同打造主系统、语料集、粤语 Apps 与模块库",
+    "description_3": "实验室四大研究方向：\n* **粤语文化精神标识体系研究**\n* **通用粤语语料库建设**\n* **大模型粤语言语交互质量评测**\n* **大模型粤语言语交互质量提升**",
+    "getStarted": "面向哪些用户？",
     "scrollIndicator": "滚动探索"
   },
   "whyWeAreHere": {
-    "title": "我们为何在此",
-    "description": "作为最具活力和特色的汉语方言，粤语不仅是交流工具，更是岭南文化的精神载体和活态文化遗产。全球有超过",
+    "title": "系统面向哪些用户？",
+    "description": "* **粤语爱好者** — 搜索粤语相关数据与使用粤语相关应用\n* **粤语学习者** — 借助 AI，在大量高质量粤语资料和相关应用的基础上掌握粤语\n* **粤语研究者** — 获取高质量粤语数据与资料，使用相关研究工具\n* **语料贡献机构** — 提供粤语语料集，实现数据价值最大化\n* **语料贡献个体** — 参与语料标注与语料提供的贡献，获得相应收益，共建粤语爱好者生态\n* **开发者** — 参与粤语相关的基础设施和创新应用的建设，提交应用到应用商店，共建开发者生态",
     "speakers": "8500万人使用",
     "period": "。"
   },
@@ -54,19 +57,19 @@
         "name": "应用层",
         "subtitle": "面向用户的解决方案",
         "description": "终端用户应用和智能代理",
-        "items": ["粤语AI代理", "粤语应用", "粤语工具"]
+        "items": ["AI Agents", "粤语应用", "粤语工具", "小程序", "浏览器插件"]
       },
       "api": {
         "name": "API网关",
         "subtitle": "集成接口",
         "description": "开发者的标准化接口",
-        "items": ["REST APIs", "GraphQL APIs", "WebSocket APIs"]
+        "items": ["REST APIs", "GraphQL APIs", "自然语言接口"]
       },
       "core": {
         "name": "核心服务",
         "subtitle": "AI基础设施",
         "description": "核心AI和服务基础设施",
-        "items": ["AI搜索引擎", "AI SaaS框架", "应用扩展", "大语言模型"]
+        "items": ["AI搜索引擎", "AI SaaS框架", "AI Agent 系统", "插件系统"]
       },
       "data": {
         "name": "数据基础",
@@ -99,7 +102,7 @@
   },
   "footer": {
     "company": "DIMSUM AI 实验室",
-    "description": "推进人工智能在自然语言处理领域的研究与发展，专注于中国方言研究和计算语言学。",
+    "description": "Buidl the c00lest Cantonese Corpus System!",
     "partners": "合作伙伴",
     "copyright": "© 2025 DIMSUM AI 实验室。保留所有权利。",
     "privacy": "隐私政策",

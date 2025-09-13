@@ -49,15 +49,15 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: L
   };
   
   const descriptions = {
-    en: "Cultivating an AI-Compatible Cantonese Corpus: Bridging Global Cantonese AI Ecosystems",
-    zh: "培育兼容AI的粤语语料库：连接全球粤语AI生态系统",
-    yue: "培育兼容AI嘅粵語語料庫：連接全球粵語AI生態系統"
+    en: "AI-Friendly Cantonese Corpus System and AI Agent System Serving Real-World Environments",
+    zh: "AI 友好的粤语语料库系统与服务真实环境的 AI Agent 系统",
+    yue: "AI 友好嘅粵語語料庫系統同埋服務真實環境嘅 AI Agent 系統"
   };
 
   return {
     title: titles[locale],
     description: descriptions[locale],
-    keywords: ["粤语", "AI", "人工智能", "Cantonese", "自然语言处理", "NLP"],
+    keywords: ["粤语", "AI", "人工智能", "Cantonese", "LLM", "Safty"],
     authors: [{ name: "DIMSUM AI Labs" }],
     viewport: "width=device-width, initial-scale=1",
     robots: "index, follow",

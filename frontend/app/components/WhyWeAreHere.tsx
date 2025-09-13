@@ -41,11 +41,25 @@ export default function WhyWeAreHere({ dict }: WhyWeAreHereProps) {
               />
               
               {/* 描述文本 - 移动端行高和字体大小优化 */}
-              <p className="text-base sm:text-lg md:text-xl text-base-content/90 leading-relaxed tech-text mb-4 sm:mb-5 max-w-2xl mx-auto md:mx-0">
+              {/* <p className="text-base sm:text-lg md:text-xl text-base-content/90 leading-relaxed tech-text mb-4 sm:mb-5 max-w-2xl mx-auto md:mx-0">
                 {dict.whyWeAreHere.description}
                 <span className="font-bold"> {dict.whyWeAreHere.speakers}</span>
                 {dict.whyWeAreHere.period}
-              </p>
+              </p> */}
+
+              <p className="text-lg lg:text-xl text-base-content/80 mb-8 leading-loose tech-text max-w-4xl">
+              {dict.whyWeAreHere.description.split('\n').map((line, index) => (
+                <span key={index}>
+                  {line.split(/(\*\*.*?\*\*)/).map((part, partIndex) => {
+                    if (part.startsWith('**') && part.endsWith('**')) {
+                      return <strong className="hero-gradient-text" key={partIndex}>{part.slice(2, -2)}</strong>;
+                    }
+                    return part;
+                  })}
+                  {index < dict.whyWeAreHere.description.split('\n').length - 1 && <br />}
+                </span>
+              ))}
+            </p>
               
               {/* 统计数据区域 - 移动端布局优化 */}
               <div className="flex flex-col items-center md:items-start gap-2 mt-1">

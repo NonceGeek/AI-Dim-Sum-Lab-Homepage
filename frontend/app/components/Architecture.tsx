@@ -1,4 +1,4 @@
-import { Bot, Database, Cpu, Network, ArrowRight } from 'lucide-react';
+import { Bot, Database, Cpu, Network, ArrowLeft } from 'lucide-react';
 import { FadeInUp, StaggeredList, StaggeredItem } from './ScrollReveal';
 import AnimatedText from './AnimatedText';
 import { type Dictionary } from '../i18n/types';
@@ -238,7 +238,7 @@ export default function Architecture({ dict }: ArchitectureProps) {
                       <div className="flex justify-center mt-3 sm:mt-4">
                         <div className="relative">
                           <div className={`w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-base-100 to-base-200 rounded-full flex items-center justify-center border-2 ${colorClasses.border}/20 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                            <ArrowRight className={`${colorClasses.text} text-sm sm:text-lg w-4 h-4 sm:w-5 sm:h-5 rotate-90 group-hover:animate-pulse`} />
+                            <ArrowLeft className={`${colorClasses.text} text-sm sm:text-lg w-4 h-4 sm:w-5 sm:h-5 rotate-90 group-hover:animate-pulse`} />
                           </div>
                           
                           {/* 箭头光晕 */}
