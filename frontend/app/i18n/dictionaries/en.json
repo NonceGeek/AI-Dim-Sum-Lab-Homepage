@@ -1,22 +1,24 @@
 {
   "navigation": {
     "home": "Home",
-    "whyWeAreHere": "Why We Are Here",
-    "features": "Features",
-    "architecture": "Architecture",
-    "quickLinks": "Quick Links",
-    "projectBoard": "Project Board"
+    "searchEngine": "Corpus Search Engine",
+    "library": "Corpus Library",
+    "appStore": "App Store",
+    "docs": "API Docs",
+    "projectBoard": "Discussion Board"
   },
   "hero": {
     "title": "DIMSUM AI Labs",
-    "subtitle": "Cultivating an AI-Compatible Cantonese Corpus",
-    "description": "Bridging Global Cantonese AI Ecosystems through advanced natural language processing and comprehensive corpus development.",
-    "getStarted": "Get Started",
+    "subtitle": "AI-Friendly Cantonese Corpus System and AI Agent System Serving Real-World Environments",
+    "description": "Compatible with Lingnan culture, compatible with AI technology,\nBuilding a complete system integrating \"Cantonese datasets — Large Language Models — AI Agents — Innovative applications\".",
+    "description_2": "Four key features:\n* **AI-Friendly** — Equipped with interfaces for connecting with large and small models\n* **AI Agent Friendly** — Equipped with interfaces for connecting with AI Agents\n* **Hot-swappable Modules** — The system can dynamically add new capabilities, such as integrating \"blockchain rights confirmation modules\"\n* **Community Mode** — Adhering to the mode of co-construction between core team and technical community, jointly building the main system, corpus, Cantonese Apps and module library",
+    "description_3": "Four major research directions of the laboratory:\n* **Cantonese Cultural Spiritual Identity System Research**\n* **General Cantonese Corpus Construction**\n* **Large Model Cantonese Language Interaction Quality Assessment**\n* **Large Model Cantonese Language Interaction Quality Improvement**",
+    "getStarted": "Who are our target users?",
     "scrollIndicator": "Scroll to explore"
   },
   "whyWeAreHere": {
-    "title": "Why We Are Here",
-    "description": "As the most dynamic and distinctive Chinese dialect, Cantonese is not only a communication tool, but also the spiritual carrier and living cultural heritage of Lingnan culture. It is used by over",
+    "title": "Who Are Our Target Users?",
+    "description": "* **Cantonese Enthusiasts** — Search Cantonese-related data and use Cantonese-related applications\n* **Cantonese Learners** — Master Cantonese with AI assistance, based on abundant high-quality Cantonese materials and related applications\n* **Cantonese Researchers** — Obtain high-quality Cantonese data and materials, use related research tools\n* **Corpus Contributing Institutions** — Provide Cantonese corpus sets, maximize data value\n* **Individual Corpus Contributors** — Participate in corpus annotation and provision contributions, earn corresponding rewards, co-build Cantonese enthusiast ecosystem\n* **Developers** — Participate in building Cantonese-related infrastructure and innovative applications, submit applications to app store, co-build developer ecosystem",
     "speakers": "85 million people worldwide",
     "period": "."
   },
