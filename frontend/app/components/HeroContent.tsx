@@ -16,7 +16,7 @@ export default function HeroContent({ dict }: HeroContentProps) {
         <div className="max-w-7xl">
           {/* 第一行：DIMSUM AI 渐变文字 */}
           <FadeInUp delay={0.1}>
-            <h1 className="text-2xl lg:text-4xl font-black tech-heading mb-2 leading-tight">
+            <h1 className="text-3xl lg:text-5xl font-black tech-heading mb-2 leading-tight">
               <span className="hero-gradient-text">
                 {dict.hero.title}
               </span>
