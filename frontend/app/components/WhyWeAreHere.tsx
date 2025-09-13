@@ -36,7 +36,7 @@ export default function WhyWeAreHere({ dict }: WhyWeAreHereProps) {
               <AnimatedText 
                 text={dict.whyWeAreHere.title}
                 as="h2"
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-3 sm:mb-4 font-extrabold tech-heading tracking-tight leading-tight gradient-text-flow"
+                className="text-2xl lg:text-4xl mb-3 sm:mb-4 font-extrabold tech-heading tracking-tight leading-tight gradient-text-flow"
                 delay={0.3}
               />
               
@@ -47,24 +47,34 @@ export default function WhyWeAreHere({ dict }: WhyWeAreHereProps) {
                 {dict.whyWeAreHere.period}
               </p> */}
 
-              <p className="text-lg lg:text-xl text-base-content/80 mb-8 leading-loose tech-text max-w-4xl">
-              {dict.whyWeAreHere.description.split('\n').map((line, index) => (
-                <span key={index}>
-                  {line.split(/(\*\*.*?\*\*)/).map((part, partIndex) => {
-                    if (part.startsWith('**') && part.endsWith('**')) {
-                      return <strong className="hero-gradient-text" key={partIndex}>{part.slice(2, -2)}</strong>;
-                    }
-                    return part;
-                  })}
-                  {index < dict.whyWeAreHere.description.split('\n').length - 1 && <br />}
-                </span>
-              ))}
-            </p>
-              
+              <p className="text-sm lg:text-base text-base-content/80 mb-8 leading-loose tech-text max-w-4xl">
+                {dict.whyWeAreHere.description
+                  .split("\n")
+                  .map((line, index) => (
+                    <span key={index}>
+                      {line.split(/(\*\*.*?\*\*)/).map((part, partIndex) => {
+                        if (part.startsWith("**") && part.endsWith("**")) {
+                          return (
+                            <strong
+                              className="hero-gradient-text"
+                              key={partIndex}
+                            >
+                              {part.slice(2, -2)}
+                            </strong>
+                          );
+                        }
+                        return part;
+                      })}
+                      {index <
+                        dict.whyWeAreHere.description.split("\n").length -
+                          1 && <br />}
+                    </span>
+                  ))}
+              </p>
+
               {/* 统计数据区域 - 移动端布局优化 */}
               <div className="flex flex-col items-center md:items-start gap-2 mt-1">
-                <div className="flex flex-col sm:flex-row items-center sm:items-end gap-2 sm:gap-3 animate-fade-in-up animate-delay-400">
-                </div>
+                <div className="flex flex-col sm:flex-row items-center sm:items-end gap-2 sm:gap-3 animate-fade-in-up animate-delay-400"></div>
               </div>
             </div>
           </FadeInRight>
