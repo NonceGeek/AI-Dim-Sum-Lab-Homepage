@@ -120,10 +120,10 @@ export default function Architecture({ dict }: ArchitectureProps) {
           <AnimatedText 
             text={dict.architecture.title}
             as="h2"
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold gradient-text-flow mb-3 sm:mb-4 tech-heading"
+            className="text-2xl lg:text-4xl font-extrabold gradient-text-flow mb-3 sm:mb-4 tech-heading"
             delay={0.2}
           />
-          <p className="text-base sm:text-lg md:text-xl text-base-content/80 max-w-3xl mx-auto tech-text leading-relaxed px-4">
+          <p className="text-base lg:text-lg font-bold text-base-content/80 max-w-3xl mx-auto tech-text leading-relaxed px-4">
             {dict.architecture.subtitle}
           </p>
         </div>

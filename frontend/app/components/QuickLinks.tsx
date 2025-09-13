@@ -65,10 +65,10 @@ export default function QuickLinks({ dict }: QuickLinksProps) {
         <AnimatedText 
           text={dict.quickLinks.title}
           as="h2"
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold gradient-text-flow mb-3 sm:mb-4 tech-heading"
+          className="text-2xl lg:text-4xl font-extrabold gradient-text-flow mb-3 sm:mb-4 tech-heading"
           delay={0.2}
         />
-        <p className="text-base sm:text-lg md:text-xl text-base-content/80 max-w-3xl mx-auto tech-text leading-relaxed px-4">
+        <p className="text-base lg:text-lg font-bold text-base-content/80 max-w-3xl mx-auto tech-text leading-relaxed px-4">
           {dict.quickLinks.subtitle}
         </p>
       </div>
@@ -97,7 +97,7 @@ export default function QuickLinks({ dict }: QuickLinksProps) {
                           <IconComponent className={`text-2xl sm:text-2xl md:text-3xl w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 text-${link.color} group-hover:animate-pulse group-hover:drop-shadow-[0_0_8px_rgba(var(--color-${link.color}),0.6)]`} />
                         </div>
                         
-                        <h3 className="text-xl sm:text-2xl font-bold tech-heading text-base-content transition-colors duration-300">
+                        <h3 className="text-lg lg:text-xl font-bold tech-heading text-base-content transition-colors duration-300">
                           {link.title}
                         </h3>
                       </div>

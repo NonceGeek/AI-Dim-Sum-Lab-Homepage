@@ -9,7 +9,7 @@ interface HeroProps {
 
 export default function Hero({ dict }: HeroProps) {
   return (
-    <div id="hero" className="hero min-h-[90vh] rounded-lg mb-8 scroll-mt-20 relative overflow-hidden">
+    <div id="hero" className="hero min-h-[90vh] rounded-lg mb-8 scroll-mt-5 relative overflow-hidden">
       {/* 主要内容容器 - 使用客户端组件处理动画 */}
       <HeroContent dict={dict} />
 

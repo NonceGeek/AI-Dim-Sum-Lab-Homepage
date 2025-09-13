@@ -95,10 +95,10 @@ export default function Features({ dict }: FeaturesProps) {
           <AnimatedText 
             text={dict.features.title}
             as="h2"
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold gradient-text-flow mb-4 sm:mb-6 tech-heading"
+            className="text-2xl lg:text-4xl font-extrabold gradient-text-flow mb-4 sm:mb-6 tech-heading"
             delay={0.2}
           />
-          <p className="text-lg sm:text-xl text-base-content/80 max-w-4xl tech-text leading-relaxed">
+          <p className="text-base lg:text-xl font-bold text-base-content/80 max-w-4xl tech-text leading-relaxed">
             {dict.features.subtitle}
           </p>
         </div>
@@ -130,7 +130,7 @@ export default function Features({ dict }: FeaturesProps) {
                         <div className="absolute inset-0 rounded-xl sm:rounded-2xl border border-primary/20 opacity-0 group-hover:opacity-50 group-hover:scale-110 sm:group-hover:scale-125 transition-all duration-700 group-hover:shadow-md" style={{animationDelay: '0.2s'}}></div>
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-lg sm:text-xl md:text-2xl font-bold tech-heading leading-tight group-hover:text-opacity-90 transition-all duration-300 group-hover:drop-shadow-md">
+                        <h3 className="text-xl lg:text-2xl font-bold tech-heading leading-tight group-hover:text-opacity-90 transition-all duration-300 group-hover:drop-shadow-md">
                           {feature.title}
                         </h3>
                         <div className="h-0.5 bg-gradient-to-r from-primary/20 to-primary/10 mt-2 w-0 group-hover:w-full transition-all duration-500 group-hover:shadow-md"></div>
