@@ -49,7 +49,7 @@ export default function HeroContent({ dict }: HeroContentProps) {
 
           <FadeInUp delay={0.5}>
             <p className="text-lg lg:text-xl text-base-content/80 mb-8 leading-loose tech-text max-w-4xl">
-              {dict.hero.description_3.split('\n').map((line, index) => (
+              {dict.hero.description_2.split('\n').map((line, index) => (
                 <span key={index}>
                   {line.split(/(\*\*.*?\*\*)/).map((part, partIndex) => {
                     if (part.startsWith('**') && part.endsWith('**')) {
@@ -57,7 +57,7 @@ export default function HeroContent({ dict }: HeroContentProps) {
                     }
                     return part;
                   })}
-                  {index < dict.hero.description_3.split('\n').length - 1 && <br />}
+                  {index < dict.hero.description_2.split('\n').length - 1 && <br />}
                 </span>
               ))}
             </p>
