@@ -1,7 +1,7 @@
 export interface Dictionary {
   navigation: {
     home: string;
-    whyWeAreHere: string;
+    searchEngine: string;
     features: string;
     architecture: string;
     quickLinks: string;
