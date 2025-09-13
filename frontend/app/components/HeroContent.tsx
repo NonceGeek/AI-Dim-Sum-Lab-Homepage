@@ -10,10 +10,10 @@ interface HeroContentProps {
 
 export default function HeroContent({ dict }: HeroContentProps) {
   return (
-    <div className="hero-content text-left w-full max-w-none p-8 lg:p-12 relative z-10 pt-0 -mt-10">
+    <div className="hero-content text-left w-full max-w-none p-8 lg:p-12 relative z-10 pt-0 ">
       <div className="w-full">
         {/* 左下角内容区域 */}
-        <div className="max-w-7xl">
+        <div className="max-w-7xl -mt-10">
           {/* 第一行：DIMSUM AI 渐变文字 */}
           <FadeInUp delay={0.1}>
             <h1 className="text-3xl lg:text-5xl font-black tech-heading mb-2 leading-tight">
