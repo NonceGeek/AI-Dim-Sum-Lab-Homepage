@@ -17,7 +17,7 @@ export default function WhyWeAreHere({ dict }: WhyWeAreHereProps) {
         </div>
         
         {/* 主要内容容器 - 移动端布局优化 */}
-        <div className="relative z-10 flex flex-col md:flex-row items-center justify-center gap-6 sm:gap-7 md:gap-10 w-full max-w-6xl">
+        <div className="relative z-10 flex flex-col md:flex-row items-center justify-center gap-6 sm:gap-7 md:gap-10 w-full max-w-6xl lg:justify-around">
           {/* Logo 区域 - 移动端尺寸调整 */}
           <FadeInLeft delay={0.1}>
             <LogoFloat 

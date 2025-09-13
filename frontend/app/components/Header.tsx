@@ -97,6 +97,8 @@ export default function Header({ locale, dict }: HeaderProps) {
                   <li key={item.href}>
                     <Link 
                       href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-base-content hover:text-primary transition-all duration-300 hover:bg-primary/20 hover:backdrop-blur-md hover:scale-105 hover:translate-x-1"
                       style={{ transitionDelay: `${50}ms` }}
                     >
@@ -125,6 +127,8 @@ export default function Header({ locale, dict }: HeaderProps) {
                 <li key={item.href}>
                   <Link 
                     href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-base-content hover:text-primary transition-all duration-300 hover:bg-primary/20 hover:backdrop-blur-md hover:scale-105 relative group"
                     style={{ transitionDelay: `${100}ms` }}
                   >
