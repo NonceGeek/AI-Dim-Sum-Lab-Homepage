@@ -12,7 +12,8 @@
 /.next/
 /out/
 /public/feeds/
-
+/old_version/node_modules
+/old_version/out
 # production
 /build
 
