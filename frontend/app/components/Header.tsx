@@ -20,11 +20,11 @@ export default function Header({ locale, dict }: HeaderProps) {
   const navItems = [{ label: dict.navigation.home, id: "hero", href: "/" }];
 
   const externalNavItems = [
-    { label: dict.navigation.searchEngine, href: "https://baidu.com" },
-    { label: dict.navigation.features, href: "https://tianya.com" },
-    { label: dict.navigation.architecture, href: "https://bewater.pro" },
-    { label: dict.navigation.quickLinks, href: "https://noncegeek.com" },
-    { label: dict.navigation.projectBoard, href: "https://google.com" },
+    { label: dict.navigation.searchEngine, href: "https://search.aidimsum.com/" },
+    { label: dict.navigation.library, href: "https://search.aidimsum.com/library" },
+    { label: dict.navigation.appStore, href: "https://search.aidimsum.com/appStore" },
+    { label: dict.navigation.docs, href: "https://search.aidimsum.com/docs" },
+    { label: dict.navigation.projectBoard, href: "https://github.com/NonceGeek/dim-sum-app/issues" },
   ];
 
   const renderNavItem = (item: {

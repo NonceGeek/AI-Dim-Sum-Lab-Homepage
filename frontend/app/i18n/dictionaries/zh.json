@@ -2,9 +2,9 @@
   "navigation": {
     "home": "首页",
     "searchEngine": "语料搜索引擎",
-    "features": "语料图书馆",
-    "architecture": "应用商店",
-    "quickLinks": "文档",
+    "library": "语料图书馆",
+    "appStore": "应用商店",
+    "docs": "接口文档",
     "projectBoard": "讨论区"
   },
   "hero": {

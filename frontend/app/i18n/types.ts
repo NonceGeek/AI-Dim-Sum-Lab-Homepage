@@ -2,9 +2,9 @@ export interface Dictionary {
   navigation: {
     home: string;
     searchEngine: string;
-    features: string;
-    architecture: string;
-    quickLinks: string;
+    library: string;
+    appStore: string;
+    docs: string;
     projectBoard: string;
   };
   hero: {
